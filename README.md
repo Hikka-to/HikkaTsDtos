@@ -1,1 +1,1 @@
-"# HikkaTsDtos" 
+# Hikka TypeScript DTOs
