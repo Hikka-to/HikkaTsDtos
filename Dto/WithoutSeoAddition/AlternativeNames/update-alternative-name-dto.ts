@@ -3,10 +3,9 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-export interface CreateAnimeBackdropDto {
+import { ModelDto } from "../../../Shared/model-dto";
+
+export interface UpdateAlternativeNameDto extends ModelDto {
     animeId: string;
-    path: string;
-    width: number;
-    height: number;
-    colors: number[];
+    name: string;
 }

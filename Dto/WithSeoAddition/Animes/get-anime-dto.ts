@@ -4,18 +4,25 @@
  */
 
 import { GetDtoWithSeoAddition } from "../../../Shared/get-dto-with-seo-addition";
+import { GetKindDto } from "../Kinds/get-kind-dto";
+import { GetStatusDto } from "../Statuses/get-status-dto";
+import { GetPeriodDto } from "../Periods/get-period-dto";
+import { GetRestrictedRatingDto } from "../RestrictedRatings/get-restricted-rating-dto";
+import { GetSourceDto } from "../Sources/get-source-dto";
+import { GetTagDto } from "../Tags/get-tag-dto";
 
 export interface GetAnimeDto extends GetDtoWithSeoAddition {
-    kindId: string;
-    statusId: string;
-    periodId: string;
-    restrictedRatingId: string;
-    sourceId: string;
+    kind: GetKindDto;
+    status: GetStatusDto;
+    period: GetPeriodDto;
+    restrictedRating: GetRestrictedRatingDto;
+    source: GetSourceDto;
+    tags: GetTagDto[];
     name: string;
     imageName: string;
     romajiName: string;
     nativeName: string;
-    posterPath: string;
+    posterPathUrl: string;
     posterColors: number[];
     avgDuration: number;
     howManyEpisodes: number;

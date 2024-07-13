@@ -5,10 +5,7 @@
 
 import { ModelDto } from "../../../Shared/model-dto";
 
-export interface UpdateAnimeBackdropDto extends ModelDto {
+export interface GetAlternativeNameDto extends ModelDto {
     animeId: string;
-    path: string;
-    width: number;
-    height: number;
-    colors: number[];
+    name: string;
 }

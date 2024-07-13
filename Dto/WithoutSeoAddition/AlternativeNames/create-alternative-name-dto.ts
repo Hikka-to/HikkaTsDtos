@@ -3,7 +3,7 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-export class KeyValuePair<TKey, TValue> {
-    key: TKey;
-    value: TValue;
+export interface CreateAlternativeNameDto {
+    animeId: string;
+    name: string;
 }

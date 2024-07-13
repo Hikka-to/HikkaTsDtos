@@ -7,7 +7,7 @@ import { ModelDto } from "../../../Shared/model-dto";
 
 export interface GetAnimeBackdropDto extends ModelDto {
     animeId: string;
-    path: string;
+    imageUrl: string;
     width: number;
     height: number;
     colors: number[];
