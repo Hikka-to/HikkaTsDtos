@@ -10,6 +10,8 @@ import { GetPeriodDto } from "../Periods/get-period-dto";
 import { GetRestrictedRatingDto } from "../RestrictedRatings/get-restricted-rating-dto";
 import { GetSourceDto } from "../Sources/get-source-dto";
 import { GetTagDto } from "../Tags/get-tag-dto";
+import { GetCountryDto } from "../Countries/get-country-dto";
+import { GetDubDto } from "../Dubs/get-dub-dto";
 
 export interface GetAnimeDto extends GetDtoWithSeoAddition {
     kind: GetKindDto;
@@ -18,6 +20,8 @@ export interface GetAnimeDto extends GetDtoWithSeoAddition {
     restrictedRating: GetRestrictedRatingDto;
     source: GetSourceDto;
     tags: GetTagDto[];
+    countries: GetCountryDto[];
+    dubs: GetDubDto[];
     name: string;
     imageName: string;
     romajiName: string;
