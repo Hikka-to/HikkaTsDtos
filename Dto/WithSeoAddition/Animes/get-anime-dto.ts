@@ -12,6 +12,7 @@ import { GetSourceDto } from "../Sources/get-source-dto";
 import { GetTagDto } from "../Tags/get-tag-dto";
 import { GetCountryDto } from "../Countries/get-country-dto";
 import { GetDubDto } from "../Dubs/get-dub-dto";
+import { GetAnimeGroupDto } from "../../WithoutSeoAddition/AnimeGroups/get-anime-group-dto";
 
 export interface GetAnimeDto extends GetDtoWithSeoAddition {
     kind: GetKindDto;
@@ -22,6 +23,7 @@ export interface GetAnimeDto extends GetDtoWithSeoAddition {
     tags: GetTagDto[];
     countries: GetCountryDto[];
     dubs: GetDubDto[];
+    animeGroups: GetAnimeGroupDto[];
     name: string;
     imageName: string;
     romajiName: string;
