@@ -23,7 +23,8 @@ export interface GetAnimeDto extends GetDtoWithSeoAddition {
     tags: GetTagDto[];
     countries: GetCountryDto[];
     dubs: GetDubDto[];
-    animeGroups: GetAnimeGroupDto[];
+    relatedAnimeGroups: GetAnimeGroupDto[];
+    seasonAnimeGroups: GetAnimeGroupDto[];
     name: string;
     imageName: string;
     romajiName: string;
