@@ -8,4 +8,6 @@ import { GetDtoWithSeoAddition } from "../../../Shared/get-dto-with-seo-addition
 export interface GetCollectionDto extends GetDtoWithSeoAddition {
     name: string;
     description: string;
+    createdAt: Date;
+    updatedAt: Date;
 }

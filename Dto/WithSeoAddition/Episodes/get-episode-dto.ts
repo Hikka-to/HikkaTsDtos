@@ -11,6 +11,6 @@ export interface GetEpisodeDto extends GetDtoWithSeoAddition {
     duration: number;
     airDate: Date;
     isFiller: boolean;
-    updateAt: Date;
-    createAt: Date;
+    updatedAt: Date;
+    createdAt: Date;
 }
