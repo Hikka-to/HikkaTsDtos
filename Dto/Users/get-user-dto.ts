@@ -4,8 +4,19 @@
  */
 
 import { ModelDto } from "../../Shared/model-dto";
+import { GetUserSettingDto } from "../WithoutSeoAddition/UserSettings/get-user-setting-dto";
 
 export interface GetUserDto extends ModelDto {
+    userSetting: GetUserSettingDto;
     email: string;
     roles: string[];
+    name: string;
+    avatarUrl: string;
+    backdropUrl: string;
+    description: string;
+    statusText: string;
+    allowAdult: boolean;
+    lastSeenAt: Date;
+    updatedAt: Date;
+    createdAtTime: Date;
 }

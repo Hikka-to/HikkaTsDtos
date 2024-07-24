@@ -3,8 +3,6 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-export interface UpdateUserDto {
-    id: string;
-    email: string;
-    role: string;
+export interface CreateCommentReportTypeDto {
+    slug: string;
 }
