@@ -3,12 +3,12 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { SortOrder } from "./sort-order";
+import { FilterDto } from "./filter-dto";
+import { SortDto } from "./sort-dto";
 
 export interface FilterPaginationDto {
-    searchTerm: string;
     pageNumber: number;
     pageSize: number;
-    column: string;
-    sortOrder: SortOrder;
+    filters: FilterDto[];
+    sorts: SortDto[];
 }
