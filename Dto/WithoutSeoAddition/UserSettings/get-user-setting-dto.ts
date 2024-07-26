@@ -3,7 +3,9 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-export interface GetUserSettingDto {
+import { ModelDto } from "../../../Shared/model-dto";
+
+export interface GetUserSettingDto extends ModelDto {
     isAutoNext: boolean;
     isAutoPlay: boolean;
     isAutoSkipIntro: boolean;
