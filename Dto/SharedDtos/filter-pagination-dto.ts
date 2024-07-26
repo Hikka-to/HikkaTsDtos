@@ -9,6 +9,6 @@ import { SortDto } from "./sort-dto";
 export interface FilterPaginationDto {
     pageNumber: number;
     pageSize: number;
-    filters: FilterDto[];
+    filters: FilterDto[][];
     sorts: SortDto[];
 }

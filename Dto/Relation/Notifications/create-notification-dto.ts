@@ -3,11 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-
-export interface GetAnimeRatingDto extends ModelDto {
-    reviewId: string;
+export interface CreateNotificationDto {
     userId: string;
     animeId: string;
-    number: number;
+    resourceId: string;
 }

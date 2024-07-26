@@ -5,9 +5,8 @@
 
 import { ModelDto } from "../../../Shared/model-dto";
 
-export interface GetAnimeRatingDto extends ModelDto {
-    reviewId: string;
+export interface UpdateUserAnimeListDto extends ModelDto {
     userId: string;
     animeId: string;
-    number: number;
+    isFavorite: boolean;
 }
