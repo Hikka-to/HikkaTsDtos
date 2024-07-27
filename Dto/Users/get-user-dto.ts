@@ -19,5 +19,5 @@ export interface GetUserDto extends ModelDto {
     allowAdult: boolean;
     lastSeenAt: Date;
     updatedAt: Date;
-    createdAtTime: Date;
+    createdAt: Date;
 }
