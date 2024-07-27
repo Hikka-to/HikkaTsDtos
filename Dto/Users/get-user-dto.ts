@@ -15,6 +15,7 @@ export interface GetUserDto extends ModelDto {
     backdropUrl: string;
     description: string;
     statusText: string;
+    statusIcon: string;
     allowAdult: boolean;
     lastSeenAt: Date;
     updatedAt: Date;
