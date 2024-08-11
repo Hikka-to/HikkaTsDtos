@@ -3,9 +3,22 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { UpdateDtoWithSeoAddition } from "../../../Shared/update-dto-with-seo-addition";
+import { UpdateDtoWithSeoAddition } from "../../../Shared/update-dto-with-seo-addition";import { updateSeoAdditionDtoSchema } from '../../SeoAdditions/update-seo-addition-dto';
+import { z } from 'zod';
 
 export interface UpdateKindDto extends UpdateDtoWithSeoAddition {
     slug: string;
     hint: string;
 }
+
+export const updateKindDtoProperties: (keyof UpdateKindDto)[] = [
+    'slug',
+    'hint'
+];
+
+export const updateKindDtoSchema = z.object({
+    slug: z.string().length(128),
+    hint: z.string().length(64),
+    seoAddition: updateSeoAdditionDtoSchema,
+    id: z.string().uuid().regex(/\S/)
+});

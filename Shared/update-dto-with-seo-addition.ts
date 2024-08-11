@@ -4,8 +4,17 @@
  */
 
 import { ModelDto } from "./model-dto";
-import { UpdateSeoAdditionDto } from "../Dto/SeoAdditions/update-seo-addition-dto";
+import { UpdateSeoAdditionDto, updateSeoAdditionDtoSchema } from "../Dto/SeoAdditions/update-seo-addition-dto";import { z } from 'zod';
 
 export interface UpdateDtoWithSeoAddition extends ModelDto {
     seoAddition: UpdateSeoAdditionDto;
 }
+
+export const updateDtoWithSeoAdditionProperties: (keyof UpdateDtoWithSeoAddition)[] = [
+    'seoAddition'
+];
+
+export const updateDtoWithSeoAdditionSchema = z.object({
+    seoAddition: updateSeoAdditionDtoSchema,
+    id: z.string().uuid().regex(/\S/)
+});

@@ -7,3 +7,8 @@ export interface ReturnPageDto<T> {
     models: T[];
     howManyPages: number;
 }
+
+export const returnPageDtoProperties: (keyof ReturnPageDto)[] = [
+    'models',
+    'howManyPages'
+];

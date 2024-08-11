@@ -4,9 +4,9 @@
  */
 
 import { ModelDto } from "../../../Shared/model-dto";
-import { GetCommentDto } from "../Comments/get-comment-dto";
-import { GetUserDto } from "../../Users/get-user-dto";
-import { GetCommentReportTypeDto } from "../CommentReportTypes/get-comment-report-type-dto";
+import { GetCommentDto, getCommentDtoSchema } from "../Comments/get-comment-dto";
+import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";
+import { GetCommentReportTypeDto, getCommentReportTypeDtoSchema } from "../CommentReportTypes/get-comment-report-type-dto";import { z } from 'zod';
 
 export interface GetCommentReportDto extends ModelDto {
     comment: GetCommentDto;
@@ -14,3 +14,18 @@ export interface GetCommentReportDto extends ModelDto {
     commentReportType: GetCommentReportTypeDto;
     body: string;
 }
+
+export const getCommentReportDtoProperties: (keyof GetCommentReportDto)[] = [
+    'comment',
+    'user',
+    'commentReportType',
+    'body'
+];
+
+export const getCommentReportDtoSchema = z.object({
+    comment: getCommentDtoSchema,
+    user: getUserDtoSchema,
+    commentReportType: getCommentReportTypeDtoSchema,
+    body: z.string().nullable(),
+    id: z.string().uuid().regex(/\S/)
+});

@@ -4,8 +4,8 @@
  */
 
 import { ModelDto } from "../../../Shared/model-dto";
-import { GetUserDto } from "../../Users/get-user-dto";
-import { GetEpisodeDto } from "../../WithSeoAddition/Episodes/get-episode-dto";
+import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";
+import { GetEpisodeDto, getEpisodeDtoSchema } from "../../WithSeoAddition/Episodes/get-episode-dto";import { z } from 'zod';
 
 export interface GetUserWatchHistoryDto extends ModelDto {
     user: GetUserDto;
@@ -14,3 +14,20 @@ export interface GetUserWatchHistoryDto extends ModelDto {
     updatedAt: Date;
     createdAt: Date;
 }
+
+export const getUserWatchHistoryDtoProperties: (keyof GetUserWatchHistoryDto)[] = [
+    'user',
+    'episode',
+    'progressTime',
+    'updatedAt',
+    'createdAt'
+];
+
+export const getUserWatchHistoryDtoSchema = z.object({
+    user: getUserDtoSchema,
+    episode: getEpisodeDtoSchema,
+    progressTime: z.number().int(),
+    updatedAt: z.date(),
+    createdAt: z.date(),
+    id: z.string().uuid().regex(/\S/)
+});

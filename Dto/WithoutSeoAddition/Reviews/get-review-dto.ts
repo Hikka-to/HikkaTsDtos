@@ -4,7 +4,7 @@
  */
 
 import { ModelDto } from "../../../Shared/model-dto";
-import { GetAnimeRatingDto } from "../../Relation/AnimeRatings/get-anime-rating-dto";
+import { GetAnimeRatingDto, getAnimeRatingDtoSchema } from "../../Relation/AnimeRatings/get-anime-rating-dto";import { z } from 'zod';
 
 export interface GetReviewDto extends ModelDto {
     animeRating: GetAnimeRatingDto;
@@ -14,3 +14,22 @@ export interface GetReviewDto extends ModelDto {
     createdAt: Date;
     removedAt: Date;
 }
+
+export const getReviewDtoProperties: (keyof GetReviewDto)[] = [
+    'animeRating',
+    'name',
+    'body',
+    'updatedAt',
+    'createdAt',
+    'removedAt'
+];
+
+export const getReviewDtoSchema = z.object({
+    animeRating: getAnimeRatingDtoSchema,
+    name: z.string(),
+    body: z.string(),
+    updatedAt: z.date(),
+    createdAt: z.date(),
+    removedAt: z.date(),
+    id: z.string().uuid().regex(/\S/)
+});

@@ -4,7 +4,7 @@
  */
 
 import { ModelDto } from "../../../Shared/model-dto";
-import { GetAnimeDto } from "../../WithSeoAddition/Animes/get-anime-dto";
+import { GetAnimeDto, getAnimeDtoSchema } from "../../WithSeoAddition/Animes/get-anime-dto";import { z } from 'zod';
 
 export interface GetProviderDto extends ModelDto {
     anime: GetAnimeDto;
@@ -12,3 +12,18 @@ export interface GetProviderDto extends ModelDto {
     name: string;
     priority: number;
 }
+
+export const getProviderDtoProperties: (keyof GetProviderDto)[] = [
+    'anime',
+    'logoPath',
+    'name',
+    'priority'
+];
+
+export const getProviderDtoSchema = z.object({
+    anime: getAnimeDtoSchema,
+    logoPath: z.string(),
+    name: z.string(),
+    priority: z.number().int(),
+    id: z.string().uuid().regex(/\S/)
+});

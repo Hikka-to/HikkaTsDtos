@@ -4,7 +4,7 @@
  */
 
 import { ModelDto } from "../../../Shared/model-dto";
-import { GetUserDto } from "../../Users/get-user-dto";
+import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";import { z } from 'zod';
 
 export interface GetCommentDto extends ModelDto {
     body: string;
@@ -13,3 +13,20 @@ export interface GetCommentDto extends ModelDto {
     createdAt: Date;
     updatedAt: Date;
 }
+
+export const getCommentDtoProperties: (keyof GetCommentDto)[] = [
+    'body',
+    'user',
+    'parentId',
+    'createdAt',
+    'updatedAt'
+];
+
+export const getCommentDtoSchema = z.object({
+    body: z.string(),
+    user: getUserDtoSchema,
+    parentId: z.string().uuid(),
+    createdAt: z.date(),
+    updatedAt: z.date(),
+    id: z.string().uuid().regex(/\S/)
+});

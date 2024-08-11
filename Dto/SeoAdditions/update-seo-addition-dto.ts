@@ -4,7 +4,7 @@
  */
 
 import { ModelDto } from "../../Shared/model-dto";
-import { SocialType } from "./social-type";
+import { SocialType, socialTypeSchema } from "./social-type";import { z } from 'zod';
 
 export interface UpdateSeoAdditionDto extends ModelDto {
     id: string;
@@ -18,3 +18,29 @@ export interface UpdateSeoAdditionDto extends ModelDto {
     socialImage: string;
     socialImageAlt: string;
 }
+
+export const updateSeoAdditionDtoProperties: (keyof UpdateSeoAdditionDto)[] = [
+    'id',
+    'slug',
+    'title',
+    'description',
+    'image',
+    'imageAlt',
+    'socialTitle',
+    'socialType',
+    'socialImage',
+    'socialImageAlt'
+];
+
+export const updateSeoAdditionDtoSchema = z.object({
+    id: z.string().uuid().regex(/\S/),
+    slug: z.string(),
+    title: z.string(),
+    description: z.string(),
+    image: z.string().nullable(),
+    imageAlt: z.string().nullable(),
+    socialTitle: z.string().nullable(),
+    socialType: socialTypeSchema.nullable(),
+    socialImage: z.string().nullable(),
+    socialImageAlt: z.string().nullable()
+});
