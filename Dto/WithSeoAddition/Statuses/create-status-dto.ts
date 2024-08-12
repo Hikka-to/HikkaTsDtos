@@ -10,10 +10,6 @@ export interface CreateStatusDto extends CreateDtoWithSeoAddition {
     name: string;
 }
 
-export const createStatusDtoProperties: (keyof CreateStatusDto)[] = [
-    'name'
-];
-
 export const createStatusDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema

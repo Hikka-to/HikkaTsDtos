@@ -12,16 +12,10 @@ export interface UpdateLanguageDto extends UpdateDtoWithSeoAddition {
     icon: string;
 }
 
-export const updateLanguageDtoProperties: (keyof UpdateLanguageDto)[] = [
-    'name',
-    'locale',
-    'icon'
-];
-
 export const updateLanguageDtoSchema = z.object({
     name: z.string().length(64),
     locale: z.string().length(2),
     icon: z.string().length(2048),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

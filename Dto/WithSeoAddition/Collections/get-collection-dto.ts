@@ -13,18 +13,11 @@ export interface GetCollectionDto extends GetDtoWithSeoAddition {
     updatedAt: Date;
 }
 
-export const getCollectionDtoProperties: (keyof GetCollectionDto)[] = [
-    'name',
-    'description',
-    'createdAt',
-    'updatedAt'
-];
-
 export const getCollectionDtoSchema = z.object({
     name: z.string(),
     description: z.string(),
     createdAt: z.date(),
     updatedAt: z.date(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

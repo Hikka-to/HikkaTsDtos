@@ -11,15 +11,9 @@ export interface UpdateUserWatchHistoryDto extends ModelDto {
     progressTime: number;
 }
 
-export const updateUserWatchHistoryDtoProperties: (keyof UpdateUserWatchHistoryDto)[] = [
-    'userId',
-    'episodeId',
-    'progressTime'
-];
-
 export const updateUserWatchHistoryDtoSchema = z.object({
     userId: z.string().uuid(),
     episodeId: z.string().uuid(),
     progressTime: z.number().int(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

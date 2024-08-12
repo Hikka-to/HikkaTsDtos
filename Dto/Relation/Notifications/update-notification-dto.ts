@@ -11,15 +11,9 @@ export interface UpdateNotificationDto extends ModelDto {
     resourceId: string;
 }
 
-export const updateNotificationDtoProperties: (keyof UpdateNotificationDto)[] = [
-    'userId',
-    'animeId',
-    'resourceId'
-];
-
 export const updateNotificationDtoSchema = z.object({
     userId: z.string().uuid(),
     animeId: z.string().uuid(),
     resourceId: z.string().uuid(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

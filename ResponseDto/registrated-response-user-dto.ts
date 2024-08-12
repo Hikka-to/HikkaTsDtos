@@ -10,13 +10,8 @@ export interface RegistratedResponseUserDto extends ModelDto {
     jwtToken: string;
 }
 
-export const registratedResponseUserDtoProperties: (keyof RegistratedResponseUserDto)[] = [
-    'message',
-    'jwtToken'
-];
-
 export const registratedResponseUserDtoSchema = z.object({
     message: z.string(),
     jwtToken: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

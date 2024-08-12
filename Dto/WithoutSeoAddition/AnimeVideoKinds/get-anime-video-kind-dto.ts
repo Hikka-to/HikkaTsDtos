@@ -9,11 +9,7 @@ export interface GetAnimeVideoKindDto extends ModelDto {
     name: string;
 }
 
-export const getAnimeVideoKindDtoProperties: (keyof GetAnimeVideoKindDto)[] = [
-    'name'
-];
-
 export const getAnimeVideoKindDtoSchema = z.object({
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

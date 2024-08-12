@@ -10,12 +10,8 @@ export interface UpdatePeriodDto extends UpdateDtoWithSeoAddition {
     name: string;
 }
 
-export const updatePeriodDtoProperties: (keyof UpdatePeriodDto)[] = [
-    'name'
-];
-
 export const updatePeriodDtoSchema = z.object({
     name: z.string().length(24),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -12,17 +12,10 @@ export interface GetAnimeRatingDto extends ModelDto {
     number: number;
 }
 
-export const getAnimeRatingDtoProperties: (keyof GetAnimeRatingDto)[] = [
-    'reviewId',
-    'userId',
-    'animeId',
-    'number'
-];
-
 export const getAnimeRatingDtoSchema = z.object({
     reviewId: z.string().uuid(),
     userId: z.string().uuid(),
     animeId: z.string().uuid(),
     number: z.number().int(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

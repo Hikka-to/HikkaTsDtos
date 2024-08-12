@@ -11,13 +11,8 @@ export interface CreateDubDto extends CreateDtoWithSeoAddition {
     icon: string;
 }
 
-export const createDubDtoProperties: (keyof CreateDubDto)[] = [
-    'name',
-    'icon'
-];
-
 export const createDubDtoSchema = z.object({
     name: z.string().length(128),
-    icon: z.string().nullable().length(2048),
+    icon: z.string().length(2048).nullable(),
     seoAddition: createSeoAdditionDtoSchema
 });

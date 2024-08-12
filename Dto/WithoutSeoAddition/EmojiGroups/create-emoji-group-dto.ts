@@ -9,11 +9,6 @@ export interface CreateEmojiGroupDto {
     slug: string;
 }
 
-export const createEmojiGroupDtoProperties: (keyof CreateEmojiGroupDto)[] = [
-    'name',
-    'slug'
-];
-
 export const createEmojiGroupDtoSchema = z.object({
     name: z.string().length(64),
     slug: z.string().length(128)

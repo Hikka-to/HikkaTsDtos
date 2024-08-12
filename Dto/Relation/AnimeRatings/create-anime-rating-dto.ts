@@ -11,13 +11,6 @@ export interface CreateAnimeRatingDto {
     number: number;
 }
 
-export const createAnimeRatingDtoProperties: (keyof CreateAnimeRatingDto)[] = [
-    'reviewId',
-    'userId',
-    'animeId',
-    'number'
-];
-
 export const createAnimeRatingDtoSchema = z.object({
     reviewId: z.string().uuid(),
     userId: z.string().uuid(),

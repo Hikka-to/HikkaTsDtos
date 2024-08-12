@@ -10,12 +10,6 @@ export interface CreateUserWatchHistoryDto {
     progressTime: number;
 }
 
-export const createUserWatchHistoryDtoProperties: (keyof CreateUserWatchHistoryDto)[] = [
-    'userId',
-    'episodeId',
-    'progressTime'
-];
-
 export const createUserWatchHistoryDtoSchema = z.object({
     userId: z.string().uuid(),
     episodeId: z.string().uuid(),

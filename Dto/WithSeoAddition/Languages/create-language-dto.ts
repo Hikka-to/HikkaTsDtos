@@ -12,12 +12,6 @@ export interface CreateLanguageDto extends CreateDtoWithSeoAddition {
     icon: string;
 }
 
-export const createLanguageDtoProperties: (keyof CreateLanguageDto)[] = [
-    'name',
-    'locale',
-    'icon'
-];
-
 export const createLanguageDtoSchema = z.object({
     name: z.string().length(64),
     locale: z.string().length(2),

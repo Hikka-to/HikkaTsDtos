@@ -10,12 +10,6 @@ export interface FilterDto {
     isStrict: boolean;
 }
 
-export const filterDtoProperties: (keyof FilterDto)[] = [
-    'searchTerm',
-    'column',
-    'isStrict'
-];
-
 export const filterDtoSchema = z.object({
     searchTerm: z.string(),
     column: z.string(),

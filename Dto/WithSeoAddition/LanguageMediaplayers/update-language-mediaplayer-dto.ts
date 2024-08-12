@@ -19,30 +19,17 @@ export interface UpdateLanguageMediaplayerDto extends UpdateDtoWithSeoAddition {
     endEnding: number;
 }
 
-export const updateLanguageMediaplayerDtoProperties: (keyof UpdateLanguageMediaplayerDto)[] = [
-    'mediaplayerId',
-    'languageId',
-    'episodeId',
-    'formatId',
-    'url',
-    'fileId',
-    'startIntro',
-    'endIntro',
-    'startEnding',
-    'endEnding'
-];
-
 export const updateLanguageMediaplayerDtoSchema = z.object({
     mediaplayerId: z.string().uuid(),
     languageId: z.string().uuid(),
     episodeId: z.string().uuid(),
     formatId: z.string().uuid(),
     url: z.string().length(2048),
-    fileId: z.string().nullable().length(2048),
-    startIntro: z.number().int().nullable(),
-    endIntro: z.number().int().nullable(),
-    startEnding: z.number().int().nullable(),
-    endEnding: z.number().int().nullable(),
+    fileId: z.string().length(2048).nullable(),
+    startIntro: z.number().int().min(0).max(4294967295).nullable(),
+    endIntro: z.number().int().min(0).max(4294967295).nullable(),
+    startEnding: z.number().int().min(0).max(4294967295).nullable(),
+    endEnding: z.number().int().min(0).max(4294967295).nullable(),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

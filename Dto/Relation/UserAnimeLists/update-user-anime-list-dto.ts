@@ -11,15 +11,9 @@ export interface UpdateUserAnimeListDto extends ModelDto {
     isFavorite: boolean;
 }
 
-export const updateUserAnimeListDtoProperties: (keyof UpdateUserAnimeListDto)[] = [
-    'userId',
-    'animeId',
-    'isFavorite'
-];
-
 export const updateUserAnimeListDtoSchema = z.object({
     userId: z.string().uuid(),
     animeId: z.string().uuid(),
     isFavorite: z.boolean(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

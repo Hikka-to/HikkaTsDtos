@@ -9,11 +9,6 @@ export interface CreateAlternativeNameDto {
     name: string;
 }
 
-export const createAlternativeNameDtoProperties: (keyof CreateAlternativeNameDto)[] = [
-    'animeId',
-    'name'
-];
-
 export const createAlternativeNameDtoSchema = z.object({
     animeId: z.string().uuid(),
     name: z.string().length(156)

@@ -8,10 +8,6 @@ export interface LoginResponseUserDto {
     token: string;
 }
 
-export const loginResponseUserDtoProperties: (keyof LoginResponseUserDto)[] = [
-    'token'
-];
-
 export const loginResponseUserDtoSchema = z.object({
     token: z.string()
 });

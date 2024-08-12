@@ -10,12 +10,6 @@ export interface CreateCommentDto {
     parentId: string;
 }
 
-export const createCommentDtoProperties: (keyof CreateCommentDto)[] = [
-    'body',
-    'userId',
-    'parentId'
-];
-
 export const createCommentDtoSchema = z.object({
     body: z.string().max(2048),
     userId: z.string().uuid(),

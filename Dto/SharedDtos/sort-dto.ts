@@ -10,11 +10,6 @@ export interface SortDto {
     sortOrder: SortOrder;
 }
 
-export const sortDtoProperties: (keyof SortDto)[] = [
-    'column',
-    'sortOrder'
-];
-
 export const sortDtoSchema = z.object({
     column: z.string(),
     sortOrder: sortOrderSchema

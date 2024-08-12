@@ -10,12 +10,8 @@ export interface GetSourceDto extends GetDtoWithSeoAddition {
     name: string;
 }
 
-export const getSourceDtoProperties: (keyof GetSourceDto)[] = [
-    'name'
-];
-
 export const getSourceDtoSchema = z.object({
     name: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

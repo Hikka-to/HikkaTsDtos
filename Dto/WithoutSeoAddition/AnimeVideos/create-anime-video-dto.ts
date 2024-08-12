@@ -12,14 +12,6 @@ export interface CreateAnimeVideoDto {
     embedUrl: string;
 }
 
-export const createAnimeVideoDtoProperties: (keyof CreateAnimeVideoDto)[] = [
-    'animeVideoKindId',
-    'name',
-    'url',
-    'imageUrl',
-    'embedUrl'
-];
-
 export const createAnimeVideoDtoSchema = z.object({
     animeVideoKindId: z.string().uuid(),
     name: z.string().length(156),

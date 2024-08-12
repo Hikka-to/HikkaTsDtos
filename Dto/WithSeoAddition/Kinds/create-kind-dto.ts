@@ -11,11 +11,6 @@ export interface CreateKindDto extends CreateDtoWithSeoAddition {
     hint: string;
 }
 
-export const createKindDtoProperties: (keyof CreateKindDto)[] = [
-    'slug',
-    'hint'
-];
-
 export const createKindDtoSchema = z.object({
     slug: z.string().length(128),
     hint: z.string().length(64),

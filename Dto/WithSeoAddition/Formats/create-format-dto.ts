@@ -10,10 +10,6 @@ export interface CreateFormatDto extends CreateDtoWithSeoAddition {
     name: string;
 }
 
-export const createFormatDtoProperties: (keyof CreateFormatDto)[] = [
-    'name'
-];
-
 export const createFormatDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema

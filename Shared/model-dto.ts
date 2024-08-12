@@ -8,10 +8,6 @@ export interface ModelDto {
     id: string;
 }
 
-export const modelDtoProperties: (keyof ModelDto)[] = [
-    'id'
-];
-
 export const modelDtoSchema = z.object({
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

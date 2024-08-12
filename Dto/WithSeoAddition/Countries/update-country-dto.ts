@@ -11,14 +11,9 @@ export interface UpdateCountryDto extends UpdateDtoWithSeoAddition {
     icon: string;
 }
 
-export const updateCountryDtoProperties: (keyof UpdateCountryDto)[] = [
-    'name',
-    'icon'
-];
-
 export const updateCountryDtoSchema = z.object({
     name: z.string().length(64),
     icon: z.string().length(2048),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -14,14 +14,6 @@ export interface GetTagDto extends GetDtoWithSeoAddition {
     parentTagId: string;
 }
 
-export const getTagDtoProperties: (keyof GetTagDto)[] = [
-    'name',
-    'engName',
-    'alises',
-    'isGenre',
-    'parentTagId'
-];
-
 export const getTagDtoSchema = z.object({
     name: z.string(),
     engName: z.string(),
@@ -29,5 +21,5 @@ export const getTagDtoSchema = z.object({
     isGenre: z.boolean(),
     parentTagId: z.string().uuid().nullable(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

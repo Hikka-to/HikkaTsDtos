@@ -10,13 +10,8 @@ export interface GetEmojiGroupDto extends ModelDto {
     slug: string;
 }
 
-export const getEmojiGroupDtoProperties: (keyof GetEmojiGroupDto)[] = [
-    'name',
-    'slug'
-];
-
 export const getEmojiGroupDtoSchema = z.object({
     name: z.string(),
     slug: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

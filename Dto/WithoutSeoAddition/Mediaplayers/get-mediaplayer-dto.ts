@@ -10,13 +10,8 @@ export interface GetMediaplayerDto extends ModelDto {
     icon: string;
 }
 
-export const getMediaplayerDtoProperties: (keyof GetMediaplayerDto)[] = [
-    'name',
-    'icon'
-];
-
 export const getMediaplayerDtoSchema = z.object({
     name: z.string(),
     icon: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

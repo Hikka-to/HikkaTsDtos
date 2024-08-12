@@ -8,10 +8,6 @@ export interface CreateAnimeGroupDto {
     name: string;
 }
 
-export const createAnimeGroupDtoProperties: (keyof CreateAnimeGroupDto)[] = [
-    'name'
-];
-
 export const createAnimeGroupDtoSchema = z.object({
     name: z.string().length(128)
 });

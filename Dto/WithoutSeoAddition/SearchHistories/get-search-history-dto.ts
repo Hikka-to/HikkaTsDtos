@@ -10,13 +10,8 @@ export interface GetSearchHistoryDto extends ModelDto {
     createAt: Date;
 }
 
-export const getSearchHistoryDtoProperties: (keyof GetSearchHistoryDto)[] = [
-    'query',
-    'createAt'
-];
-
 export const getSearchHistoryDtoSchema = z.object({
     query: z.string(),
     createAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

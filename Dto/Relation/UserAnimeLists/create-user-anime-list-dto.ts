@@ -9,11 +9,6 @@ export interface CreateUserAnimeListDto {
     isFavorite: boolean;
 }
 
-export const createUserAnimeListDtoProperties: (keyof CreateUserAnimeListDto)[] = [
-    'userAnimeListTypeId',
-    'isFavorite'
-];
-
 export const createUserAnimeListDtoSchema = z.object({
     userAnimeListTypeId: z.string().uuid(),
     isFavorite: z.boolean()

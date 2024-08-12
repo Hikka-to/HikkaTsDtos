@@ -9,11 +9,7 @@ export interface UpdateAnimeGroupDto extends ModelDto {
     name: string;
 }
 
-export const updateAnimeGroupDtoProperties: (keyof UpdateAnimeGroupDto)[] = [
-    'name'
-];
-
 export const updateAnimeGroupDtoSchema = z.object({
     name: z.string().length(128),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

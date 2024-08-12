@@ -19,21 +19,8 @@ export interface UpdateSeoAdditionDto extends ModelDto {
     socialImageAlt: string;
 }
 
-export const updateSeoAdditionDtoProperties: (keyof UpdateSeoAdditionDto)[] = [
-    'id',
-    'slug',
-    'title',
-    'description',
-    'image',
-    'imageAlt',
-    'socialTitle',
-    'socialType',
-    'socialImage',
-    'socialImageAlt'
-];
-
 export const updateSeoAdditionDtoSchema = z.object({
-    id: z.string().uuid().regex(/\S/),
+    id: z.string().uuid(),
     slug: z.string(),
     title: z.string(),
     description: z.string(),

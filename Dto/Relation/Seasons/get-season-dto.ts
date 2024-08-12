@@ -13,15 +13,9 @@ export interface GetSeasonDto extends ModelDto {
     name: string;
 }
 
-export const getSeasonDtoProperties: (keyof GetSeasonDto)[] = [
-    'anime',
-    'animeGroup',
-    'name'
-];
-
 export const getSeasonDtoSchema = z.object({
     anime: getAnimeDtoSchema,
     animeGroup: getAnimeGroupDtoSchema,
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

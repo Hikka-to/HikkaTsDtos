@@ -14,18 +14,10 @@ export interface CreateEpisodeDto extends CreateDtoWithSeoAddition {
     isFiller: boolean;
 }
 
-export const createEpisodeDtoProperties: (keyof CreateEpisodeDto)[] = [
-    'animeId',
-    'name',
-    'duration',
-    'airDate',
-    'isFiller'
-];
-
 export const createEpisodeDtoSchema = z.object({
     animeId: z.string().uuid(),
     name: z.string().length(128),
-    duration: z.number().int().min(0).max(∞),
+    duration: z.number().int().min(0).max(2147483647),
     airDate: z.date(),
     isFiller: z.boolean(),
     seoAddition: createSeoAdditionDtoSchema

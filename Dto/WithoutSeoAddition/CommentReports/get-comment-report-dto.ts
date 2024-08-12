@@ -15,17 +15,10 @@ export interface GetCommentReportDto extends ModelDto {
     body: string;
 }
 
-export const getCommentReportDtoProperties: (keyof GetCommentReportDto)[] = [
-    'comment',
-    'user',
-    'commentReportType',
-    'body'
-];
-
 export const getCommentReportDtoSchema = z.object({
     comment: getCommentDtoSchema,
     user: getUserDtoSchema,
     commentReportType: getCommentReportTypeDtoSchema,
     body: z.string().nullable(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

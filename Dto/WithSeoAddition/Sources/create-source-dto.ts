@@ -10,10 +10,6 @@ export interface CreateSourceDto extends CreateDtoWithSeoAddition {
     name: string;
 }
 
-export const createSourceDtoProperties: (keyof CreateSourceDto)[] = [
-    'name'
-];
-
 export const createSourceDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema

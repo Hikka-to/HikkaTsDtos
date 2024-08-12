@@ -13,15 +13,6 @@ export interface CreateReviewDto {
     removedAt: Date;
 }
 
-export const createReviewDtoProperties: (keyof CreateReviewDto)[] = [
-    'animeRatingId',
-    'name',
-    'body',
-    'updatedAt',
-    'createdAt',
-    'removedAt'
-];
-
 export const createReviewDtoSchema = z.object({
     animeRatingId: z.string().uuid(),
     name: z.string().length(64),

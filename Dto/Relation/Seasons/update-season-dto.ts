@@ -11,15 +11,9 @@ export interface UpdateSeasonDto extends ModelDto {
     name: string;
 }
 
-export const updateSeasonDtoProperties: (keyof UpdateSeasonDto)[] = [
-    'animeId',
-    'animeGroupId',
-    'name'
-];
-
 export const updateSeasonDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

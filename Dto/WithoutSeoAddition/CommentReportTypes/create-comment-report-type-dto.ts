@@ -8,10 +8,6 @@ export interface CreateCommentReportTypeDto {
     slug: string;
 }
 
-export const createCommentReportTypeDtoProperties: (keyof CreateCommentReportTypeDto)[] = [
-    'slug'
-];
-
 export const createCommentReportTypeDtoSchema = z.object({
     slug: z.string().length(128)
 });

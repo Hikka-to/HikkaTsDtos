@@ -10,12 +10,8 @@ export interface UpdateSourceDto extends UpdateDtoWithSeoAddition {
     name: string;
 }
 
-export const updateSourceDtoProperties: (keyof UpdateSourceDto)[] = [
-    'name'
-];
-
 export const updateSourceDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

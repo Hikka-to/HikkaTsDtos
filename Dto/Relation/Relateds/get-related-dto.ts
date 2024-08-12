@@ -11,15 +11,9 @@ export interface GetRelatedDto extends ModelDto {
     relatedTypeId: string;
 }
 
-export const getRelatedDtoProperties: (keyof GetRelatedDto)[] = [
-    'animeId',
-    'animeGroupId',
-    'relatedTypeId'
-];
-
 export const getRelatedDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),
     relatedTypeId: z.string().uuid(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

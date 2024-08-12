@@ -14,19 +14,11 @@ export interface GetCommentDto extends ModelDto {
     updatedAt: Date;
 }
 
-export const getCommentDtoProperties: (keyof GetCommentDto)[] = [
-    'body',
-    'user',
-    'parentId',
-    'createdAt',
-    'updatedAt'
-];
-
 export const getCommentDtoSchema = z.object({
     body: z.string(),
     user: getUserDtoSchema,
     parentId: z.string().uuid(),
     createdAt: z.date(),
     updatedAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

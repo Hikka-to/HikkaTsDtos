@@ -16,16 +16,6 @@ export interface GetEpisodeDto extends GetDtoWithSeoAddition {
     createdAt: Date;
 }
 
-export const getEpisodeDtoProperties: (keyof GetEpisodeDto)[] = [
-    'animeId',
-    'name',
-    'duration',
-    'airDate',
-    'isFiller',
-    'updatedAt',
-    'createdAt'
-];
-
 export const getEpisodeDtoSchema = z.object({
     animeId: z.string().uuid(),
     name: z.string(),
@@ -35,5 +25,5 @@ export const getEpisodeDtoSchema = z.object({
     updatedAt: z.date(),
     createdAt: z.date(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

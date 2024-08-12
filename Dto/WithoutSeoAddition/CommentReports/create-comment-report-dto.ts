@@ -11,16 +11,9 @@ export interface CreateCommentReportDto {
     body: string;
 }
 
-export const createCommentReportDtoProperties: (keyof CreateCommentReportDto)[] = [
-    'commentId',
-    'userId',
-    'commentReportTypeId',
-    'body'
-];
-
 export const createCommentReportDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     commentReportTypeId: z.string().uuid(),
-    body: z.string().nullable().length(2048)
+    body: z.string().length(2048).nullable()
 });

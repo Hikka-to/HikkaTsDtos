@@ -11,14 +11,9 @@ export interface UpdateCollectionDto extends UpdateDtoWithSeoAddition {
     description: string;
 }
 
-export const updateCollectionDtoProperties: (keyof UpdateCollectionDto)[] = [
-    'name',
-    'description'
-];
-
 export const updateCollectionDtoSchema = z.object({
     name: z.string().length(64),
     description: z.string().length(256),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

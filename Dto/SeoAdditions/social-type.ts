@@ -2,6 +2,7 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
+import { z } from 'zod';
 
 export enum SocialType {
     Website = 0,
@@ -17,3 +18,7 @@ export enum SocialType {
     MusicPlaylist = 10,
     MusicRadioStation = 11,
 }
+
+export const socialTypeKeys = Object.keys(SocialType) as [keyof typeof SocialType]
+
+export const socialTypeSchema = z.enum(socialTypeKeys)

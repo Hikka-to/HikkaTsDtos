@@ -11,15 +11,9 @@ export interface UpdateCommentLikeDto extends ModelDto {
     isLiked: boolean;
 }
 
-export const updateCommentLikeDtoProperties: (keyof UpdateCommentLikeDto)[] = [
-    'commentId',
-    'userId',
-    'isLiked'
-];
-
 export const updateCommentLikeDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     isLiked: z.boolean(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

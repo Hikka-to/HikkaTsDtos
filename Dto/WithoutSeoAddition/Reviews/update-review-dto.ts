@@ -14,15 +14,6 @@ export interface UpdateReviewDto extends ModelDto {
     removedAt: Date;
 }
 
-export const updateReviewDtoProperties: (keyof UpdateReviewDto)[] = [
-    'animeRatingId',
-    'name',
-    'body',
-    'updatedAt',
-    'createdAt',
-    'removedAt'
-];
-
 export const updateReviewDtoSchema = z.object({
     animeRatingId: z.string().uuid(),
     name: z.string().length(64),
@@ -30,5 +21,5 @@ export const updateReviewDtoSchema = z.object({
     updatedAt: z.date(),
     createdAt: z.date(),
     removedAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

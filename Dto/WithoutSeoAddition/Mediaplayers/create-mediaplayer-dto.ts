@@ -9,11 +9,6 @@ export interface CreateMediaplayerDto {
     icon: string;
 }
 
-export const createMediaplayerDtoProperties: (keyof CreateMediaplayerDto)[] = [
-    'name',
-    'icon'
-];
-
 export const createMediaplayerDtoSchema = z.object({
     name: z.string().length(128),
     icon: z.string().length(2048)

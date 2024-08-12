@@ -15,19 +15,11 @@ export interface GetUserRecommendationDto extends ModelDto {
     updatedAt: Date;
 }
 
-export const getUserRecommendationDtoProperties: (keyof GetUserRecommendationDto)[] = [
-    'user',
-    'anime',
-    'description',
-    'createdAt',
-    'updatedAt'
-];
-
 export const getUserRecommendationDtoSchema = z.object({
     user: getUserDtoSchema,
     anime: getAnimeDtoSchema,
     description: z.string(),
     createdAt: z.date(),
     updatedAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

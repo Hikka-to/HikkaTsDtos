@@ -10,13 +10,8 @@ export interface GetUserAnimeListTypeDto extends ModelDto {
     name: string;
 }
 
-export const getUserAnimeListTypeDtoProperties: (keyof GetUserAnimeListTypeDto)[] = [
-    'slug',
-    'name'
-];
-
 export const getUserAnimeListTypeDtoSchema = z.object({
     slug: z.string(),
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

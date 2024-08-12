@@ -9,11 +9,7 @@ export interface GetCommentReportTypeDto extends ModelDto {
     slug: string;
 }
 
-export const getCommentReportTypeDtoProperties: (keyof GetCommentReportTypeDto)[] = [
-    'slug'
-];
-
 export const getCommentReportTypeDtoSchema = z.object({
     slug: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

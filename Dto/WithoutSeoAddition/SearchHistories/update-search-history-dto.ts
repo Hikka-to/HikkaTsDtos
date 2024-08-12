@@ -10,13 +10,8 @@ export interface UpdateSearchHistoryDto extends ModelDto {
     createAt: Date;
 }
 
-export const updateSearchHistoryDtoProperties: (keyof UpdateSearchHistoryDto)[] = [
-    'query',
-    'createAt'
-];
-
 export const updateSearchHistoryDtoSchema = z.object({
     query: z.string().length(255),
     createAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -23,19 +23,6 @@ export interface GetLanguageMediaplayerDto extends GetDtoWithSeoAddition {
     endEnding: number;
 }
 
-export const getLanguageMediaplayerDtoProperties: (keyof GetLanguageMediaplayerDto)[] = [
-    'mediaplayer',
-    'language',
-    'episode',
-    'format',
-    'url',
-    'fileId',
-    'startIntro',
-    'endIntro',
-    'startEnding',
-    'endEnding'
-];
-
 export const getLanguageMediaplayerDtoSchema = z.object({
     mediaplayer: getMediaplayerDtoSchema,
     language: getLanguageDtoSchema,
@@ -43,10 +30,10 @@ export const getLanguageMediaplayerDtoSchema = z.object({
     format: getFormatDtoSchema,
     url: z.string(),
     fileId: z.string().nullable(),
-    startIntro: z.number().int().nullable(),
-    endIntro: z.number().int().nullable(),
-    startEnding: z.number().int().nullable(),
-    endEnding: z.number().int().nullable(),
+    startIntro: z.number().int().min(0).max(4294967295).nullable(),
+    endIntro: z.number().int().min(0).max(4294967295).nullable(),
+    startEnding: z.number().int().min(0).max(4294967295).nullable(),
+    endEnding: z.number().int().min(0).max(4294967295).nullable(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -14,14 +14,6 @@ export interface CreateTagDto extends CreateDtoWithSeoAddition {
     parentTagId: string;
 }
 
-export const createTagDtoProperties: (keyof CreateTagDto)[] = [
-    'name',
-    'engName',
-    'alises',
-    'isGenre',
-    'parentTagId'
-];
-
 export const createTagDtoSchema = z.object({
     name: z.string().length(64),
     engName: z.string().length(64),

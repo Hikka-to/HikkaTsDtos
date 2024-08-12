@@ -13,17 +13,10 @@ export interface GetProviderDto extends ModelDto {
     priority: number;
 }
 
-export const getProviderDtoProperties: (keyof GetProviderDto)[] = [
-    'anime',
-    'logoPath',
-    'name',
-    'priority'
-];
-
 export const getProviderDtoSchema = z.object({
     anime: getAnimeDtoSchema,
     logoPath: z.string(),
     name: z.string(),
     priority: z.number().int(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

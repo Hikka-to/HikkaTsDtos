@@ -12,7 +12,8 @@ import { GetSourceDto, getSourceDtoSchema } from "../Sources/get-source-dto";
 import { GetTagDto, getTagDtoSchema } from "../Tags/get-tag-dto";
 import { GetCountryDto, getCountryDtoSchema } from "../Countries/get-country-dto";
 import { GetDubDto, getDubDtoSchema } from "../Dubs/get-dub-dto";
-import { GetAnimeGroupDto, getAnimeGroupDtoSchema } from "../../WithoutSeoAddition/AnimeGroups/get-anime-group-dto";import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
+import { GetAnimeGroupDto, getAnimeGroupDtoSchema } from "../../WithoutSeoAddition/AnimeGroups/get-anime-group-dto";
+import { GetLightAnimeDto, getLightAnimeDtoSchema } from "./get-light-anime-dto";import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
 import { z } from 'zod';
 
 export interface GetAnimeDto extends GetDtoWithSeoAddition {
@@ -26,12 +27,13 @@ export interface GetAnimeDto extends GetDtoWithSeoAddition {
     dubs: GetDubDto[];
     relatedAnimeGroups: GetAnimeGroupDto[];
     seasonAnimeGroups: GetAnimeGroupDto[];
-    similarAnimes: GetAnimeDto[];
+    similarAnimes: GetLightAnimeDto[];
     name: string;
     imageName: string;
     romajiName: string;
     nativeName: string;
     posterPathUrl: string;
+    backdropPathUrl: string;
     posterColors: number[];
     avgDuration: number;
     howManyEpisodes: number;
@@ -48,39 +50,6 @@ export interface GetAnimeDto extends GetDtoWithSeoAddition {
     createdAt: Date;
 }
 
-export const getAnimeDtoProperties: (keyof GetAnimeDto)[] = [
-    'kind',
-    'status',
-    'period',
-    'restrictedRating',
-    'source',
-    'tags',
-    'countries',
-    'dubs',
-    'relatedAnimeGroups',
-    'seasonAnimeGroups',
-    'similarAnimes',
-    'name',
-    'imageName',
-    'romajiName',
-    'nativeName',
-    'posterPathUrl',
-    'posterColors',
-    'avgDuration',
-    'howManyEpisodes',
-    'firstAirDate',
-    'lastAirDate',
-    'tmdbId',
-    'shikimoriId',
-    'shikimoriScore',
-    'tmdbScore',
-    'imdbScore',
-    'isPublished',
-    'publishedAt',
-    'updatedAt',
-    'createdAt'
-];
-
 export const getAnimeDtoSchema = z.object({
     kind: getKindDtoSchema,
     status: getStatusDtoSchema,
@@ -92,19 +61,20 @@ export const getAnimeDtoSchema = z.object({
     dubs: z.array(getDubDtoSchema),
     relatedAnimeGroups: z.array(getAnimeGroupDtoSchema),
     seasonAnimeGroups: z.array(getAnimeGroupDtoSchema),
-    similarAnimes: z.array(getAnimeDtoSchema),
+    similarAnimes: z.array(getLightAnimeDtoSchema),
     name: z.string(),
     imageName: z.string().nullable(),
     romajiName: z.string().nullable(),
     nativeName: z.string(),
     posterPathUrl: z.string(),
-    posterColors: z.array(z.number().int()),
+    backdropPathUrl: z.string().nullable(),
+    posterColors: z.array(z.number().int().min(-2147483648).max(2147483647)),
     avgDuration: z.number(),
     howManyEpisodes: z.number().int(),
     firstAirDate: z.date(),
     lastAirDate: z.date(),
-    tmdbId: z.number().int().nullable(),
-    shikimoriId: z.number().int().nullable(),
+    tmdbId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullable(),
+    shikimoriId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullable(),
     shikimoriScore: z.number(),
     tmdbScore: z.number(),
     imdbScore: z.number(),
@@ -113,5 +83,5 @@ export const getAnimeDtoSchema = z.object({
     updatedAt: z.date(),
     createdAt: z.date(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

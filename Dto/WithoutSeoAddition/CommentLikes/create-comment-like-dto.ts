@@ -10,12 +10,6 @@ export interface CreateCommentLikeDto {
     isLiked: boolean;
 }
 
-export const createCommentLikeDtoProperties: (keyof CreateCommentLikeDto)[] = [
-    'commentId',
-    'userId',
-    'isLiked'
-];
-
 export const createCommentLikeDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),

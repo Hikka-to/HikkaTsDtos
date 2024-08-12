@@ -11,11 +11,6 @@ export interface CreateCountryDto extends CreateDtoWithSeoAddition {
     icon: string;
 }
 
-export const createCountryDtoProperties: (keyof CreateCountryDto)[] = [
-    'name',
-    'icon'
-];
-
 export const createCountryDtoSchema = z.object({
     name: z.string().length(64),
     icon: z.string().length(2048),

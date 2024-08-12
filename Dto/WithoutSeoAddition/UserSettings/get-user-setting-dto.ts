@@ -14,15 +14,6 @@ export interface GetUserSettingDto extends ModelDto {
     isPrivateAnimeList: boolean;
 }
 
-export const getUserSettingDtoProperties: (keyof GetUserSettingDto)[] = [
-    'isAutoNext',
-    'isAutoPlay',
-    'isAutoSkipIntro',
-    'isDub',
-    'isRomaji',
-    'isPrivateAnimeList'
-];
-
 export const getUserSettingDtoSchema = z.object({
     isAutoNext: z.boolean(),
     isAutoPlay: z.boolean(),
@@ -30,5 +21,5 @@ export const getUserSettingDtoSchema = z.object({
     isDub: z.boolean(),
     isRomaji: z.boolean(),
     isPrivateAnimeList: z.boolean(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

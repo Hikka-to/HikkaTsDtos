@@ -9,11 +9,6 @@ export interface UserLoginDto {
     password: string;
 }
 
-export const userLoginDtoProperties: (keyof UserLoginDto)[] = [
-    'email',
-    'password'
-];
-
 export const userLoginDtoSchema = z.object({
     email: z.string().email(),
     password: z.string().regex(/\S/)

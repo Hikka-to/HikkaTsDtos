@@ -9,11 +9,7 @@ export interface UpdateRelatedTypeDto extends ModelDto {
     name: string;
 }
 
-export const updateRelatedTypeDtoProperties: (keyof UpdateRelatedTypeDto)[] = [
-    'name'
-];
-
 export const updateRelatedTypeDtoSchema = z.object({
     name: z.string().length(128),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

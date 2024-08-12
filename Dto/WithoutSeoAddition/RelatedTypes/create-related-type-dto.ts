@@ -8,10 +8,6 @@ export interface CreateRelatedTypeDto {
     name: string;
 }
 
-export const createRelatedTypeDtoProperties: (keyof CreateRelatedTypeDto)[] = [
-    'name'
-];
-
 export const createRelatedTypeDtoSchema = z.object({
     name: z.string().length(128)
 });

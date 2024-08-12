@@ -9,11 +9,7 @@ export interface GetResourceDto extends ModelDto {
     slug: string;
 }
 
-export const getResourceDtoProperties: (keyof GetResourceDto)[] = [
-    'slug'
-];
-
 export const getResourceDtoSchema = z.object({
     slug: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

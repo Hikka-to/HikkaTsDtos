@@ -14,14 +14,6 @@ export interface UpdateTagDto extends UpdateDtoWithSeoAddition {
     parentTagId: string;
 }
 
-export const updateTagDtoProperties: (keyof UpdateTagDto)[] = [
-    'name',
-    'engName',
-    'alises',
-    'isGenre',
-    'parentTagId'
-];
-
 export const updateTagDtoSchema = z.object({
     name: z.string().length(64),
     engName: z.string().length(64),
@@ -29,5 +21,5 @@ export const updateTagDtoSchema = z.object({
     isGenre: z.boolean(),
     parentTagId: z.string().uuid().nullable(),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

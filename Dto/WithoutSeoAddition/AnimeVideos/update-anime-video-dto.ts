@@ -13,19 +13,11 @@ export interface UpdateAnimeVideoDto extends ModelDto {
     embedUrl: string;
 }
 
-export const updateAnimeVideoDtoProperties: (keyof UpdateAnimeVideoDto)[] = [
-    'animeVideoKindId',
-    'name',
-    'url',
-    'imageUrl',
-    'embedUrl'
-];
-
 export const updateAnimeVideoDtoSchema = z.object({
     animeVideoKindId: z.string().uuid(),
     name: z.string().length(156),
     url: z.string().length(2048),
     imageUrl: z.string().length(2048),
     embedUrl: z.string().length(2048),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

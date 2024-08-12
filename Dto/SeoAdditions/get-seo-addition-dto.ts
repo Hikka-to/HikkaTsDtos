@@ -18,18 +18,6 @@ export interface GetSeoAdditionDto extends ModelDto {
     socialImageAlt: string;
 }
 
-export const getSeoAdditionDtoProperties: (keyof GetSeoAdditionDto)[] = [
-    'slug',
-    'title',
-    'description',
-    'image',
-    'imageAlt',
-    'socialTitle',
-    'socialType',
-    'socialImage',
-    'socialImageAlt'
-];
-
 export const getSeoAdditionDtoSchema = z.object({
     slug: z.string(),
     title: z.string(),
@@ -40,5 +28,5 @@ export const getSeoAdditionDtoSchema = z.object({
     socialType: socialTypeSchema.nullable(),
     socialImage: z.string().nullable(),
     socialImageAlt: z.string().nullable(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

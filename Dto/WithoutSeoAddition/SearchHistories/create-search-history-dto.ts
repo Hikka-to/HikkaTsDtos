@@ -8,10 +8,6 @@ export interface CreateSearchHistoryDto {
     query: string;
 }
 
-export const createSearchHistoryDtoProperties: (keyof CreateSearchHistoryDto)[] = [
-    'query'
-];
-
 export const createSearchHistoryDtoSchema = z.object({
     query: z.string().length(255)
 });

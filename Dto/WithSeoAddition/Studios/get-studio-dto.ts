@@ -11,14 +11,9 @@ export interface GetStudioDto extends GetDtoWithSeoAddition {
     logo: string;
 }
 
-export const getStudioDtoProperties: (keyof GetStudioDto)[] = [
-    'name',
-    'logo'
-];
-
 export const getStudioDtoSchema = z.object({
     name: z.string(),
     logo: z.string().nullable(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

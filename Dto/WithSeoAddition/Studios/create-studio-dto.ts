@@ -11,13 +11,8 @@ export interface CreateStudioDto extends CreateDtoWithSeoAddition {
     logo: string;
 }
 
-export const createStudioDtoProperties: (keyof CreateStudioDto)[] = [
-    'name',
-    'logo'
-];
-
 export const createStudioDtoSchema = z.object({
     name: z.string().length(128),
-    logo: z.string().nullable().length(2048),
+    logo: z.string().length(2048).nullable(),
     seoAddition: createSeoAdditionDtoSchema
 });

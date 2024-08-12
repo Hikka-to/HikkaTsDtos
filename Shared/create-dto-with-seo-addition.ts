@@ -9,10 +9,6 @@ export interface CreateDtoWithSeoAddition {
     seoAddition: CreateSeoAdditionDto;
 }
 
-export const createDtoWithSeoAdditionProperties: (keyof CreateDtoWithSeoAddition)[] = [
-    'seoAddition'
-];
-
 export const createDtoWithSeoAdditionSchema = z.object({
     seoAddition: createSeoAdditionDtoSchema
 });

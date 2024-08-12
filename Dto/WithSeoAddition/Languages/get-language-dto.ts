@@ -12,16 +12,10 @@ export interface GetLanguageDto extends GetDtoWithSeoAddition {
     icon: string;
 }
 
-export const getLanguageDtoProperties: (keyof GetLanguageDto)[] = [
-    'name',
-    'locale',
-    'icon'
-];
-
 export const getLanguageDtoSchema = z.object({
     name: z.string(),
     locale: z.string(),
     icon: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

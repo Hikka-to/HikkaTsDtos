@@ -13,17 +13,10 @@ export interface CreateRestrictedRatingDto extends CreateDtoWithSeoAddition {
     icon: string;
 }
 
-export const createRestrictedRatingDtoProperties: (keyof CreateRestrictedRatingDto)[] = [
-    'name',
-    'value',
-    'hint',
-    'icon'
-];
-
 export const createRestrictedRatingDtoSchema = z.object({
     name: z.string().length(10),
     value: z.number().int(),
     hint: z.string().length(64),
-    icon: z.string().nullable().length(128),
+    icon: z.string().length(128).nullable(),
     seoAddition: createSeoAdditionDtoSchema
 });

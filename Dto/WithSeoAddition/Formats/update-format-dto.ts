@@ -10,12 +10,8 @@ export interface UpdateFormatDto extends UpdateDtoWithSeoAddition {
     name: string;
 }
 
-export const updateFormatDtoProperties: (keyof UpdateFormatDto)[] = [
-    'name'
-];
-
 export const updateFormatDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

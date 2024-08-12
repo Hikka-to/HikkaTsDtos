@@ -10,12 +10,6 @@ export interface CreateSeasonDto {
     name: string;
 }
 
-export const createSeasonDtoProperties: (keyof CreateSeasonDto)[] = [
-    'animeId',
-    'animeGroupId',
-    'name'
-];
-
 export const createSeasonDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),

@@ -9,11 +9,7 @@ export interface GetRelatedTypeDto extends ModelDto {
     name: string;
 }
 
-export const getRelatedTypeDtoProperties: (keyof GetRelatedTypeDto)[] = [
-    'name'
-];
-
 export const getRelatedTypeDtoSchema = z.object({
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

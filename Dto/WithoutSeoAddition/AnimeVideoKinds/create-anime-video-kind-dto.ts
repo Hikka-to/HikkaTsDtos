@@ -8,10 +8,6 @@ export interface CreateAnimeVideoKindDto {
     name: string;
 }
 
-export const createAnimeVideoKindDtoProperties: (keyof CreateAnimeVideoKindDto)[] = [
-    'name'
-];
-
 export const createAnimeVideoKindDtoSchema = z.object({
     name: z.string().length(156)
 });

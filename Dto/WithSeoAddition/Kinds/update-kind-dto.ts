@@ -11,14 +11,9 @@ export interface UpdateKindDto extends UpdateDtoWithSeoAddition {
     hint: string;
 }
 
-export const updateKindDtoProperties: (keyof UpdateKindDto)[] = [
-    'slug',
-    'hint'
-];
-
 export const updateKindDtoSchema = z.object({
     slug: z.string().length(128),
     hint: z.string().length(64),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -12,17 +12,10 @@ export interface UpdateCommentReportDto extends ModelDto {
     body: string;
 }
 
-export const updateCommentReportDtoProperties: (keyof UpdateCommentReportDto)[] = [
-    'commentId',
-    'userId',
-    'commentReportTypeId',
-    'body'
-];
-
 export const updateCommentReportDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     commentReportTypeId: z.string().uuid(),
-    body: z.string().nullable().length(2048),
-    id: z.string().uuid().regex(/\S/)
+    body: z.string().length(2048).nullable(),
+    id: z.string().uuid()
 });

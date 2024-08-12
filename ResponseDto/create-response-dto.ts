@@ -8,10 +8,6 @@ export interface CreateResponseDto {
     id: string;
 }
 
-export const createResponseDtoProperties: (keyof CreateResponseDto)[] = [
-    'id'
-];
-
 export const createResponseDtoSchema = z.object({
     id: z.string().uuid()
 });

@@ -13,19 +13,11 @@ export interface GetAnimeBackdropDto extends ModelDto {
     colors: number[];
 }
 
-export const getAnimeBackdropDtoProperties: (keyof GetAnimeBackdropDto)[] = [
-    'animeId',
-    'imageUrl',
-    'width',
-    'height',
-    'colors'
-];
-
 export const getAnimeBackdropDtoSchema = z.object({
     animeId: z.string().uuid(),
     imageUrl: z.string(),
     width: z.number().int(),
     height: z.number().int(),
-    colors: z.array(z.number().int()),
-    id: z.string().uuid().regex(/\S/)
+    colors: z.array(z.number().int().min(-2147483648).max(2147483647)),
+    id: z.string().uuid()
 });

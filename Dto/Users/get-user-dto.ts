@@ -22,22 +22,6 @@ export interface GetUserDto extends ModelDto {
     createdAt: Date;
 }
 
-export const getUserDtoProperties: (keyof GetUserDto)[] = [
-    'userSetting',
-    'email',
-    'roles',
-    'name',
-    'avatarUrl',
-    'backdropUrl',
-    'description',
-    'statusText',
-    'statusIcon',
-    'allowAdult',
-    'lastSeenAt',
-    'updatedAt',
-    'createdAt'
-];
-
 export const getUserDtoSchema = z.object({
     userSetting: getUserSettingDtoSchema,
     email: z.string(),
@@ -52,5 +36,5 @@ export const getUserDtoSchema = z.object({
     lastSeenAt: z.date(),
     updatedAt: z.date(),
     createdAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

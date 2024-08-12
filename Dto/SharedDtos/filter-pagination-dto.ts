@@ -13,16 +13,9 @@ export interface FilterPaginationDto {
     sorts: SortDto[];
 }
 
-export const filterPaginationDtoProperties: (keyof FilterPaginationDto)[] = [
-    'pageNumber',
-    'pageSize',
-    'filters',
-    'sorts'
-];
-
 export const filterPaginationDtoSchema = z.object({
-    pageNumber: z.number().int().min(1).max(2147483647).regex(/\S/),
-    pageSize: z.number().int().min(1).max(50).regex(/\S/),
+    pageNumber: z.number().int().min(1).max(2147483647),
+    pageSize: z.number().int().min(1).max(50),
     filters: z.array(z.array(filterDtoSchema)),
     sorts: z.array(sortDtoSchema)
 });

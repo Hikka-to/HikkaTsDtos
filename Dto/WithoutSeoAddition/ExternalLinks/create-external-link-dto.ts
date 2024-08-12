@@ -9,11 +9,6 @@ export interface CreateExternalLinkDto {
     url: string;
 }
 
-export const createExternalLinkDtoProperties: (keyof CreateExternalLinkDto)[] = [
-    'animeId',
-    'url'
-];
-
 export const createExternalLinkDtoSchema = z.object({
     animeId: z.string().uuid(),
     url: z.string().length(2048)

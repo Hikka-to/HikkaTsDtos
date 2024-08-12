@@ -10,12 +10,8 @@ export interface GetStatusDto extends GetDtoWithSeoAddition {
     name: string;
 }
 
-export const getStatusDtoProperties: (keyof GetStatusDto)[] = [
-    'name'
-];
-
 export const getStatusDtoSchema = z.object({
     name: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

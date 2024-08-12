@@ -10,12 +10,6 @@ export interface CreateNotificationDto {
     resourceId: string;
 }
 
-export const createNotificationDtoProperties: (keyof CreateNotificationDto)[] = [
-    'userId',
-    'animeId',
-    'resourceId'
-];
-
 export const createNotificationDtoSchema = z.object({
     userId: z.string().uuid(),
     animeId: z.string().uuid(),

@@ -11,14 +11,9 @@ export interface GetKindDto extends GetDtoWithSeoAddition {
     hint: string;
 }
 
-export const getKindDtoProperties: (keyof GetKindDto)[] = [
-    'slug',
-    'hint'
-];
-
 export const getKindDtoSchema = z.object({
     slug: z.string(),
     hint: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

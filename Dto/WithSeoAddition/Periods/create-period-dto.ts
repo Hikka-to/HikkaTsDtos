@@ -10,10 +10,6 @@ export interface CreatePeriodDto extends CreateDtoWithSeoAddition {
     name: string;
 }
 
-export const createPeriodDtoProperties: (keyof CreatePeriodDto)[] = [
-    'name'
-];
-
 export const createPeriodDtoSchema = z.object({
     name: z.string().length(24),
     seoAddition: createSeoAdditionDtoSchema

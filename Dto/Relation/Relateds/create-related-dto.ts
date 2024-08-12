@@ -10,12 +10,6 @@ export interface CreateRelatedDto {
     relatedTypeId: string;
 }
 
-export const createRelatedDtoProperties: (keyof CreateRelatedDto)[] = [
-    'animeId',
-    'animeGroupId',
-    'relatedTypeId'
-];
-
 export const createRelatedDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),

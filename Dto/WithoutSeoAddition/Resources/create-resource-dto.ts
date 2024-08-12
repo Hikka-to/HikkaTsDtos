@@ -8,10 +8,6 @@ export interface CreateResourceDto {
     slug: string;
 }
 
-export const createResourceDtoProperties: (keyof CreateResourceDto)[] = [
-    'slug'
-];
-
 export const createResourceDtoSchema = z.object({
     slug: z.string().length(128)
 });

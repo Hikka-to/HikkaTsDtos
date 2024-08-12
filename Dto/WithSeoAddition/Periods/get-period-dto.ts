@@ -10,12 +10,8 @@ export interface GetPeriodDto extends GetDtoWithSeoAddition {
     name: string;
 }
 
-export const getPeriodDtoProperties: (keyof GetPeriodDto)[] = [
-    'name'
-];
-
 export const getPeriodDtoSchema = z.object({
     name: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

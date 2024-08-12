@@ -10,13 +10,8 @@ export interface UpdateExternalLinkDto extends ModelDto {
     url: string;
 }
 
-export const updateExternalLinkDtoProperties: (keyof UpdateExternalLinkDto)[] = [
-    'animeId',
-    'url'
-];
-
 export const updateExternalLinkDtoSchema = z.object({
     animeId: z.string().uuid(),
     url: z.string().length(2048),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -9,11 +9,7 @@ export interface UpdateCommentReportTypeDto extends ModelDto {
     slug: string;
 }
 
-export const updateCommentReportTypeDtoProperties: (keyof UpdateCommentReportTypeDto)[] = [
-    'slug'
-];
-
 export const updateCommentReportTypeDtoSchema = z.object({
     slug: z.string().length(128),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

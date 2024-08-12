@@ -15,19 +15,11 @@ export interface GetUserWatchHistoryDto extends ModelDto {
     createdAt: Date;
 }
 
-export const getUserWatchHistoryDtoProperties: (keyof GetUserWatchHistoryDto)[] = [
-    'user',
-    'episode',
-    'progressTime',
-    'updatedAt',
-    'createdAt'
-];
-
 export const getUserWatchHistoryDtoSchema = z.object({
     user: getUserDtoSchema,
     episode: getEpisodeDtoSchema,
     progressTime: z.number().int(),
     updatedAt: z.date(),
     createdAt: z.date(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

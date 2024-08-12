@@ -15,17 +15,10 @@ export interface GetUserAnimeListDto extends ModelDto {
     isFavorite: boolean;
 }
 
-export const getUserAnimeListDtoProperties: (keyof GetUserAnimeListDto)[] = [
-    'userAnimeListType',
-    'user',
-    'anime',
-    'isFavorite'
-];
-
 export const getUserAnimeListDtoSchema = z.object({
     userAnimeListType: getUserAnimeListTypeDtoSchema,
     user: getUserDtoSchema,
     anime: getAnimeDtoSchema,
     isFavorite: z.boolean(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

@@ -11,14 +11,9 @@ export interface UpdateStudioDto extends UpdateDtoWithSeoAddition {
     logo: string;
 }
 
-export const updateStudioDtoProperties: (keyof UpdateStudioDto)[] = [
-    'name',
-    'logo'
-];
-
 export const updateStudioDtoSchema = z.object({
     name: z.string().length(128),
-    logo: z.string().nullable().length(2048),
+    logo: z.string().length(2048).nullable(),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

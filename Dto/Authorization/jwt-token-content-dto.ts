@@ -10,12 +10,6 @@ export interface JwtTokenContentDto {
     role: string;
 }
 
-export const jwtTokenContentDtoProperties: (keyof JwtTokenContentDto)[] = [
-    'email',
-    'id',
-    'role'
-];
-
 export const jwtTokenContentDtoSchema = z.object({
     email: z.string().nullable(),
     id: z.string().nullable(),

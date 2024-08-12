@@ -17,26 +17,14 @@ export interface CreateSeoAdditionDto {
     socialImageAlt: string;
 }
 
-export const createSeoAdditionDtoProperties: (keyof CreateSeoAdditionDto)[] = [
-    'slug',
-    'title',
-    'description',
-    'image',
-    'imageAlt',
-    'socialTitle',
-    'socialType',
-    'socialImage',
-    'socialImageAlt'
-];
-
 export const createSeoAdditionDtoSchema = z.object({
     slug: z.string().length(128),
     title: z.string().length(128),
     description: z.string().length(278),
-    image: z.string().nullable().length(128),
-    imageAlt: z.string().nullable().length(256),
-    socialTitle: z.string().nullable().length(128),
+    image: z.string().length(128).nullable(),
+    imageAlt: z.string().length(256).nullable(),
+    socialTitle: z.string().length(128).nullable(),
     socialType: socialTypeSchema.nullable(),
-    socialImage: z.string().nullable().length(128),
-    socialImageAlt: z.string().nullable().length(256)
+    socialImage: z.string().length(128).nullable(),
+    socialImageAlt: z.string().length(256).nullable()
 });

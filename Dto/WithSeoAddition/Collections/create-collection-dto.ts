@@ -11,11 +11,6 @@ export interface CreateCollectionDto extends CreateDtoWithSeoAddition {
     description: string;
 }
 
-export const createCollectionDtoProperties: (keyof CreateCollectionDto)[] = [
-    'name',
-    'description'
-];
-
 export const createCollectionDtoSchema = z.object({
     name: z.string().length(64),
     description: z.string().length(256),

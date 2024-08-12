@@ -13,19 +13,11 @@ export interface GetEpisodeImageDto extends ModelDto {
     colors: number[];
 }
 
-export const getEpisodeImageDtoProperties: (keyof GetEpisodeImageDto)[] = [
-    'episodeId',
-    'imageUrl',
-    'width',
-    'height',
-    'colors'
-];
-
 export const getEpisodeImageDtoSchema = z.object({
     episodeId: z.string().uuid(),
     imageUrl: z.string(),
     width: z.number().int(),
     height: z.number().int(),
-    colors: z.array(z.number().int()),
-    id: z.string().uuid().regex(/\S/)
+    colors: z.array(z.number().int().min(-2147483648).max(2147483647)),
+    id: z.string().uuid()
 });

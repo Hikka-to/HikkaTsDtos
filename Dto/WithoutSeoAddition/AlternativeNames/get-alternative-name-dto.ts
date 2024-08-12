@@ -10,13 +10,8 @@ export interface GetAlternativeNameDto extends ModelDto {
     name: string;
 }
 
-export const getAlternativeNameDtoProperties: (keyof GetAlternativeNameDto)[] = [
-    'animeId',
-    'name'
-];
-
 export const getAlternativeNameDtoSchema = z.object({
     animeId: z.string().uuid(),
     name: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

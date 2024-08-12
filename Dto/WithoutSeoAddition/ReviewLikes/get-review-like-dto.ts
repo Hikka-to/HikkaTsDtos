@@ -13,15 +13,9 @@ export interface GetReviewLikeDto extends ModelDto {
     isLiked: boolean;
 }
 
-export const getReviewLikeDtoProperties: (keyof GetReviewLikeDto)[] = [
-    'review',
-    'user',
-    'isLiked'
-];
-
 export const getReviewLikeDtoSchema = z.object({
     review: getReviewDtoSchema,
     user: getUserDtoSchema,
     isLiked: z.boolean(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

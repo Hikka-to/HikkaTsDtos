@@ -11,14 +11,9 @@ export interface GetDubDto extends GetDtoWithSeoAddition {
     icon: string;
 }
 
-export const getDubDtoProperties: (keyof GetDubDto)[] = [
-    'name',
-    'icon'
-];
-
 export const getDubDtoSchema = z.object({
     name: z.string(),
     icon: z.string().nullable(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

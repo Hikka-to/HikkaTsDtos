@@ -10,12 +10,8 @@ export interface GetFormatDto extends GetDtoWithSeoAddition {
     name: string;
 }
 
-export const getFormatDtoProperties: (keyof GetFormatDto)[] = [
-    'name'
-];
-
 export const getFormatDtoSchema = z.object({
     name: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

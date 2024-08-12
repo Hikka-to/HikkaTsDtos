@@ -10,11 +10,7 @@ export interface GetDtoWithSeoAddition extends ModelDto {
     seoAddition: GetSeoAdditionDto;
 }
 
-export const getDtoWithSeoAdditionProperties: (keyof GetDtoWithSeoAddition)[] = [
-    'seoAddition'
-];
-
 export const getDtoWithSeoAdditionSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

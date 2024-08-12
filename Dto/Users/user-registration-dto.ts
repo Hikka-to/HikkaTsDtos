@@ -11,13 +11,6 @@ export interface UserRegistrationDto {
     role: string;
 }
 
-export const userRegistrationDtoProperties: (keyof UserRegistrationDto)[] = [
-    'userName',
-    'email',
-    'password',
-    'role'
-];
-
 export const userRegistrationDtoSchema = z.object({
     userName: z.string().length(255).regex(/\S/),
     email: z.string().email().regex(/\S/),

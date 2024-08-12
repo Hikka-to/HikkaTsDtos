@@ -11,14 +11,9 @@ export interface GetCountryDto extends GetDtoWithSeoAddition {
     icon: string;
 }
 
-export const getCountryDtoProperties: (keyof GetCountryDto)[] = [
-    'name',
-    'icon'
-];
-
 export const getCountryDtoSchema = z.object({
     name: z.string(),
     icon: z.string(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

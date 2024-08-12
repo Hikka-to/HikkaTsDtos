@@ -11,14 +11,9 @@ export interface UpdateDubDto extends UpdateDtoWithSeoAddition {
     icon: string;
 }
 
-export const updateDubDtoProperties: (keyof UpdateDubDto)[] = [
-    'name',
-    'icon'
-];
-
 export const updateDubDtoSchema = z.object({
     name: z.string().length(128),
-    icon: z.string().nullable().length(2048),
+    icon: z.string().length(2048).nullable(),
     seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

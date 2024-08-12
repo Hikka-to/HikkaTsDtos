@@ -10,13 +10,8 @@ export interface GetExternalLinkDto extends ModelDto {
     url: string;
 }
 
-export const getExternalLinkDtoProperties: (keyof GetExternalLinkDto)[] = [
-    'animeId',
-    'url'
-];
-
 export const getExternalLinkDtoSchema = z.object({
     animeId: z.string().uuid(),
     url: z.string(),
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });

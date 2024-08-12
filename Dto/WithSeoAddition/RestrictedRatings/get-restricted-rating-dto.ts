@@ -13,18 +13,11 @@ export interface GetRestrictedRatingDto extends GetDtoWithSeoAddition {
     icon: string;
 }
 
-export const getRestrictedRatingDtoProperties: (keyof GetRestrictedRatingDto)[] = [
-    'name',
-    'value',
-    'hint',
-    'icon'
-];
-
 export const getRestrictedRatingDtoSchema = z.object({
     name: z.string(),
     value: z.number().int(),
     hint: z.string(),
     icon: z.string().nullable(),
     seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid().regex(/\S/)
+    id: z.string().uuid()
 });
