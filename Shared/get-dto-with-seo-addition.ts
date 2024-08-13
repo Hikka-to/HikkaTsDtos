@@ -9,3 +9,5 @@ export const getDtoWithSeoAdditionSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type GetDtoWithSeoAddition = z.infer<typeof getDtoWithSeoAdditionSchema>;

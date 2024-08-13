@@ -9,3 +9,5 @@ export const createStatusDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateStatusDto = z.infer<typeof createStatusDtoSchema>;

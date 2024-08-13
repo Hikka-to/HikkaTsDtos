@@ -12,3 +12,5 @@ export const getEpisodeImageDtoSchema = z.object({
     colors: z.array(z.number().int().min(-2147483648).max(2147483647)),
     id: z.string().uuid()
 });
+
+export type GetEpisodeImageDto = z.infer<typeof getEpisodeImageDtoSchema>;

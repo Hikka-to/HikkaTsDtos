@@ -10,3 +10,5 @@ export const createCommentReportDtoSchema = z.object({
     commentReportTypeId: z.string().uuid(),
     body: z.string().length(2048).nullable().optional()
 });
+
+export type CreateCommentReportDto = z.infer<typeof createCommentReportDtoSchema>;

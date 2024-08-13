@@ -12,3 +12,5 @@ export const updateLanguageDtoSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type UpdateLanguageDto = z.infer<typeof updateLanguageDtoSchema>;

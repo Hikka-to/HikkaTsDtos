@@ -9,3 +9,5 @@ export const getSearchHistoryDtoSchema = z.object({
     createAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetSearchHistoryDto = z.infer<typeof getSearchHistoryDtoSchema>;

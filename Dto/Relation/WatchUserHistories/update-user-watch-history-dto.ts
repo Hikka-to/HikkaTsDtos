@@ -10,3 +10,5 @@ export const updateUserWatchHistoryDtoSchema = z.object({
     progressTime: z.number().int(),
     id: z.string().uuid()
 });
+
+export type UpdateUserWatchHistoryDto = z.infer<typeof updateUserWatchHistoryDtoSchema>;

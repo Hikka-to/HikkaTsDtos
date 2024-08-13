@@ -8,3 +8,5 @@ export const updateCommentReportTypeDtoSchema = z.object({
     slug: z.string().length(128),
     id: z.string().uuid()
 });
+
+export type UpdateCommentReportTypeDto = z.infer<typeof updateCommentReportTypeDtoSchema>;

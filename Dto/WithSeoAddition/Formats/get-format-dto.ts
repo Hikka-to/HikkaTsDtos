@@ -10,3 +10,5 @@ export const getFormatDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type GetFormatDto = z.infer<typeof getFormatDtoSchema>;

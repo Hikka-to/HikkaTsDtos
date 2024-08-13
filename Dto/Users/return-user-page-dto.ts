@@ -9,3 +9,5 @@ export const returnUserPageDtoSchema = z.object({
     models: z.array(getUserDtoSchema),
     howManyPages: z.number().int()
 });
+
+export type ReturnUserPageDto = z.infer<typeof returnUserPageDtoSchema>;

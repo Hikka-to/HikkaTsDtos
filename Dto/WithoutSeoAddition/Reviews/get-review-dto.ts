@@ -14,3 +14,5 @@ export const getReviewDtoSchema = z.object({
     removedAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetReviewDto = z.infer<typeof getReviewDtoSchema>;

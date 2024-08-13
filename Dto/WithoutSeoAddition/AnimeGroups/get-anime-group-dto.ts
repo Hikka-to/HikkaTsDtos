@@ -8,3 +8,5 @@ export const getAnimeGroupDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type GetAnimeGroupDto = z.infer<typeof getAnimeGroupDtoSchema>;

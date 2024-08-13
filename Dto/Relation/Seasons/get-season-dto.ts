@@ -12,3 +12,5 @@ export const getSeasonDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type GetSeasonDto = z.infer<typeof getSeasonDtoSchema>;

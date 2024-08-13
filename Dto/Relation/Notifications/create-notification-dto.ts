@@ -9,3 +9,5 @@ export const createNotificationDtoSchema = z.object({
     animeId: z.string().uuid(),
     resourceId: z.string().uuid()
 });
+
+export type CreateNotificationDto = z.infer<typeof createNotificationDtoSchema>;

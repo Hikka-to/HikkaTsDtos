@@ -11,3 +11,5 @@ export const updateCountryDtoSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type UpdateCountryDto = z.infer<typeof updateCountryDtoSchema>;

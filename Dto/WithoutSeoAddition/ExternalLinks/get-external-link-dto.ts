@@ -9,3 +9,5 @@ export const getExternalLinkDtoSchema = z.object({
     url: z.string(),
     id: z.string().uuid()
 });
+
+export type GetExternalLinkDto = z.infer<typeof getExternalLinkDtoSchema>;

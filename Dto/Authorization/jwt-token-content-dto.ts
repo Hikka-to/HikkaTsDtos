@@ -9,3 +9,5 @@ export const jwtTokenContentDtoSchema = z.object({
     id: z.string().nullable().optional(),
     role: z.string().nullable().optional()
 });
+
+export type JwtTokenContentDto = z.infer<typeof jwtTokenContentDtoSchema>;

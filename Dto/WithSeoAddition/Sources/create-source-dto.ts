@@ -9,3 +9,5 @@ export const createSourceDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateSourceDto = z.infer<typeof createSourceDtoSchema>;

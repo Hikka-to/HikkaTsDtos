@@ -10,3 +10,5 @@ export const createStudioDtoSchema = z.object({
     logo: z.string().length(2048).nullable().optional(),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateStudioDto = z.infer<typeof createStudioDtoSchema>;

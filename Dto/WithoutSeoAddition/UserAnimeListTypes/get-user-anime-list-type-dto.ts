@@ -9,3 +9,5 @@ export const getUserAnimeListTypeDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type GetUserAnimeListTypeDto = z.infer<typeof getUserAnimeListTypeDtoSchema>;

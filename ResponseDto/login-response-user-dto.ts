@@ -7,3 +7,5 @@
 export const loginResponseUserDtoSchema = z.object({
     token: z.string()
 });
+
+export type LoginResponseUserDto = z.infer<typeof loginResponseUserDtoSchema>;

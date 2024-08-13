@@ -12,3 +12,5 @@ export const updateAnimeVideoDtoSchema = z.object({
     embedUrl: z.string().length(2048),
     id: z.string().uuid()
 });
+
+export type UpdateAnimeVideoDto = z.infer<typeof updateAnimeVideoDtoSchema>;

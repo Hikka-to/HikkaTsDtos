@@ -8,3 +8,5 @@ export const createAlternativeNameDtoSchema = z.object({
     animeId: z.string().uuid(),
     name: z.string().length(156)
 });
+
+export type CreateAlternativeNameDto = z.infer<typeof createAlternativeNameDtoSchema>;

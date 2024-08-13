@@ -10,3 +10,5 @@ export const updateSeasonDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type UpdateSeasonDto = z.infer<typeof updateSeasonDtoSchema>;

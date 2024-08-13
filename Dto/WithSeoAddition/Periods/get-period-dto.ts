@@ -10,3 +10,5 @@ export const getPeriodDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type GetPeriodDto = z.infer<typeof getPeriodDtoSchema>;

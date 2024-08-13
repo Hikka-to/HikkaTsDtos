@@ -12,3 +12,5 @@ export const getProviderDtoSchema = z.object({
     priority: z.number().int(),
     id: z.string().uuid()
 });
+
+export type GetProviderDto = z.infer<typeof getProviderDtoSchema>;

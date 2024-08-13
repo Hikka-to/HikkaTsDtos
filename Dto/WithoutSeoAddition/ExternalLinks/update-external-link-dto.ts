@@ -9,3 +9,5 @@ export const updateExternalLinkDtoSchema = z.object({
     url: z.string().length(2048),
     id: z.string().uuid()
 });
+
+export type UpdateExternalLinkDto = z.infer<typeof updateExternalLinkDtoSchema>;

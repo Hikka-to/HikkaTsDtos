@@ -9,3 +9,5 @@ export const createSeasonDtoSchema = z.object({
     animeGroupId: z.string().uuid(),
     name: z.string()
 });
+
+export type CreateSeasonDto = z.infer<typeof createSeasonDtoSchema>;

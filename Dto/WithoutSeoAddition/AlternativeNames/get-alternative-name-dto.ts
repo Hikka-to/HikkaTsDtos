@@ -9,3 +9,5 @@ export const getAlternativeNameDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type GetAlternativeNameDto = z.infer<typeof getAlternativeNameDtoSchema>;

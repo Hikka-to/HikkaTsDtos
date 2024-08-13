@@ -8,3 +8,5 @@ export const userLoginDtoSchema = z.object({
     email: z.string().email(),
     password: z.string().regex(/\S/)
 });
+
+export type UserLoginDto = z.infer<typeof userLoginDtoSchema>;

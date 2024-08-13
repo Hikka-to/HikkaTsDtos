@@ -7,3 +7,5 @@
 export const createSearchHistoryDtoSchema = z.object({
     query: z.string().length(255)
 });
+
+export type CreateSearchHistoryDto = z.infer<typeof createSearchHistoryDtoSchema>;

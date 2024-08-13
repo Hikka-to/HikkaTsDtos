@@ -9,3 +9,5 @@ export const filterDtoSchema = z.object({
     column: z.string(),
     isStrict: z.boolean()
 });
+
+export type FilterDto = z.infer<typeof filterDtoSchema>;

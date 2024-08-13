@@ -10,3 +10,5 @@ export const updateCommentDtoSchema = z.object({
     parentId: z.string().uuid(),
     id: z.string().uuid()
 });
+
+export type UpdateCommentDto = z.infer<typeof updateCommentDtoSchema>;

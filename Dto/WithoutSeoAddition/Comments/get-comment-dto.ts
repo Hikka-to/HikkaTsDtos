@@ -13,3 +13,5 @@ export const getCommentDtoSchema = z.object({
     updatedAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetCommentDto = z.infer<typeof getCommentDtoSchema>;

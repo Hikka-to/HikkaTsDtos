@@ -10,3 +10,5 @@ export const updateRelatedDtoSchema = z.object({
     relatedTypeId: z.string().uuid(),
     id: z.string().uuid()
 });
+
+export type UpdateRelatedDto = z.infer<typeof updateRelatedDtoSchema>;

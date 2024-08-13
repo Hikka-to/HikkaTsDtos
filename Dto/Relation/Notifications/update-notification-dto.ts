@@ -10,3 +10,5 @@ export const updateNotificationDtoSchema = z.object({
     resourceId: z.string().uuid(),
     id: z.string().uuid()
 });
+
+export type UpdateNotificationDto = z.infer<typeof updateNotificationDtoSchema>;

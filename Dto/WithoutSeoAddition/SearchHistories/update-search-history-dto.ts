@@ -9,3 +9,5 @@ export const updateSearchHistoryDtoSchema = z.object({
     createAt: z.date(),
     id: z.string().uuid()
 });
+
+export type UpdateSearchHistoryDto = z.infer<typeof updateSearchHistoryDtoSchema>;

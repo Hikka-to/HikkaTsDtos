@@ -9,3 +9,5 @@ export const updateAlternativeNameDtoSchema = z.object({
     name: z.string().length(156),
     id: z.string().uuid()
 });
+
+export type UpdateAlternativeNameDto = z.infer<typeof updateAlternativeNameDtoSchema>;

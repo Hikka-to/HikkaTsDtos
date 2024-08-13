@@ -16,3 +16,5 @@ export const createSeoAdditionDtoSchema = z.object({
     socialImage: z.string().length(128).nullable().optional(),
     socialImageAlt: z.string().length(256).nullable().optional()
 });
+
+export type CreateSeoAdditionDto = z.infer<typeof createSeoAdditionDtoSchema>;

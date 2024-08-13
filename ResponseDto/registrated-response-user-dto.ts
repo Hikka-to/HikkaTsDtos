@@ -9,3 +9,5 @@ export const registratedResponseUserDtoSchema = z.object({
     jwtToken: z.string(),
     id: z.string().uuid()
 });
+
+export type RegistratedResponseUserDto = z.infer<typeof registratedResponseUserDtoSchema>;

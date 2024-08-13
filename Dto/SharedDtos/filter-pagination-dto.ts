@@ -12,3 +12,5 @@ export const filterPaginationDtoSchema = z.object({
     filters: z.array(z.array(filterDtoSchema)),
     sorts: z.array(sortDtoSchema)
 });
+
+export type FilterPaginationDto = z.infer<typeof filterPaginationDtoSchema>;

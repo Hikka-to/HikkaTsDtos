@@ -10,3 +10,5 @@ export const getCommentLikeDtoSchema = z.object({
     isLiked: z.boolean(),
     id: z.string().uuid()
 });
+
+export type GetCommentLikeDto = z.infer<typeof getCommentLikeDtoSchema>;

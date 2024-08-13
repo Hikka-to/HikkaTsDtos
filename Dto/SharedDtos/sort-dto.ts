@@ -9,3 +9,5 @@ export const sortDtoSchema = z.object({
     column: z.string(),
     sortOrder: sortOrderSchema
 });
+
+export type SortDto = z.infer<typeof sortDtoSchema>;

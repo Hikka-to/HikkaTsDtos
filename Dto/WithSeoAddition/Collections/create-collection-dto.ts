@@ -10,3 +10,5 @@ export const createCollectionDtoSchema = z.object({
     description: z.string().length(256),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateCollectionDto = z.infer<typeof createCollectionDtoSchema>;

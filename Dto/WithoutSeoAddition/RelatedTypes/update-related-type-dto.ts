@@ -8,3 +8,5 @@ export const updateRelatedTypeDtoSchema = z.object({
     name: z.string().length(128),
     id: z.string().uuid()
 });
+
+export type UpdateRelatedTypeDto = z.infer<typeof updateRelatedTypeDtoSchema>;

@@ -11,3 +11,5 @@ export const updateCommentReportDtoSchema = z.object({
     body: z.string().length(2048).nullable().optional(),
     id: z.string().uuid()
 });
+
+export type UpdateCommentReportDto = z.infer<typeof updateCommentReportDtoSchema>;

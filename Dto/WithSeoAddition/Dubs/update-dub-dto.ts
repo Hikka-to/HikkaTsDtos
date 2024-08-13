@@ -11,3 +11,5 @@ export const updateDubDtoSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type UpdateDubDto = z.infer<typeof updateDubDtoSchema>;

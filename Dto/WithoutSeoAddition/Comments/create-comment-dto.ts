@@ -9,3 +9,5 @@ export const createCommentDtoSchema = z.object({
     userId: z.string().uuid(),
     parentId: z.string().uuid()
 });
+
+export type CreateCommentDto = z.infer<typeof createCommentDtoSchema>;

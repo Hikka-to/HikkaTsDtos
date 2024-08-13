@@ -9,3 +9,5 @@ export const getMediaplayerDtoSchema = z.object({
     icon: z.string(),
     id: z.string().uuid()
 });
+
+export type GetMediaplayerDto = z.infer<typeof getMediaplayerDtoSchema>;

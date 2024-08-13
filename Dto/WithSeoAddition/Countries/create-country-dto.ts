@@ -10,3 +10,5 @@ export const createCountryDtoSchema = z.object({
     icon: z.string().length(2048),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateCountryDto = z.infer<typeof createCountryDtoSchema>;

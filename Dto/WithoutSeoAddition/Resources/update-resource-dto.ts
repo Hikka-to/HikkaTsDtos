@@ -8,3 +8,5 @@ export const updateResourceDtoSchema = z.object({
     slug: z.string().length(128),
     id: z.string().uuid()
 });
+
+export type UpdateResourceDto = z.infer<typeof updateResourceDtoSchema>;

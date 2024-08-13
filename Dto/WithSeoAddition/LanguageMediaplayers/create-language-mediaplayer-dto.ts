@@ -18,3 +18,5 @@ export const createLanguageMediaplayerDtoSchema = z.object({
     endEnding: z.number().int().min(0).max(4294967295).nullable().optional(),
     seoAddition: createSeoAdditionDtoSchema
 });
+
+export type CreateLanguageMediaplayerDto = z.infer<typeof createLanguageMediaplayerDtoSchema>;

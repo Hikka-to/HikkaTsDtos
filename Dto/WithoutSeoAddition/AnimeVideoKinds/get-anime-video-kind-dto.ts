@@ -8,3 +8,5 @@ export const getAnimeVideoKindDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
+
+export type GetAnimeVideoKindDto = z.infer<typeof getAnimeVideoKindDtoSchema>;
