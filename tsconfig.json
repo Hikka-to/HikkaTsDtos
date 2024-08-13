@@ -4,6 +4,8 @@
     "module": "CommonJS",
     "declaration": true,
     "outDir": "./dist",
-    "strict": true
-  }
+    "strict": true,
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,10 +1,19 @@
 {
   "name": "hikka-ts-dtos",
-  "version": "0.0.1",
+  "version": "0.0.4",
+  "private": false,
   "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "README.md",
+    "dist"
+  ],
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublish": "npm run ctix && npm run build",
     "build": "tsc",
+    "ctix": "npx ctix build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,6 +25,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "ctix": "^2.6.1",
     "typescript": "^5.5.4"
   }
 }

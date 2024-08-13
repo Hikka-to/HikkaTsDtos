@@ -89,7 +89,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -102,8 +101,6 @@ dist
 
 # vuepress v2.x temp and cache directory
 .temp
-.cache
-
 # Docusaurus cache and generated files
 .docusaurus
 
@@ -132,8 +129,15 @@ dist
 # Idea
 .idea
 
-# index.ts
-index.ts
+# ignore the .ts files
+*.ts
+
+# include the .d.ts files
+!*.d.ts
+
+# ts files
+tsconfig.json
+.ctirc
 
 # .bak files
 *.bak
