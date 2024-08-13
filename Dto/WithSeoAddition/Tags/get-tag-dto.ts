@@ -10,7 +10,7 @@ export const getTagDtoSchema = z.object({
     engName: z.string(),
     alises: z.array(z.string()),
     isGenre: z.boolean(),
-    parentTagId: z.string().uuid().nullable().optional(),
+    parentTagId: z.string().uuid().nullish(),
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });

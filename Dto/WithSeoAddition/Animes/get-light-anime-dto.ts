@@ -14,19 +14,19 @@ export const getLightAnimeDtoSchema = z.object({
     period: getPeriodDtoSchema,
     restrictedRating: getRestrictedRatingDtoSchema,
     name: z.string(),
-    imageName: z.string().nullable().optional(),
-    romajiName: z.string().nullable().optional(),
+    imageName: z.string().nullish(),
+    romajiName: z.string().nullish(),
     nativeName: z.string(),
     posterPathUrl: z.string(),
     posterColors: z.array(z.number().int().min(-2147483648).max(2147483647)),
     avgDuration: z.number(),
-    tmdbId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullable().optional(),
-    shikimoriId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullable().optional(),
+    tmdbId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullish(),
+    shikimoriId: z.number().int().min(-9223372036854775808).max(9223372036854775807).nullish(),
     shikimoriScore: z.number(),
     tmdbScore: z.number(),
     imdbScore: z.number(),
     isPublished: z.boolean(),
-    publishedAt: z.date().nullable().optional()
+    publishedAt: z.date().nullish()
 });
 
 export type GetLightAnimeDto = z.infer<typeof getLightAnimeDtoSchema>;

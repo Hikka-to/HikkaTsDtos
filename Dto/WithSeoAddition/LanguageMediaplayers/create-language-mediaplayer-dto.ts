@@ -11,11 +11,11 @@ export const createLanguageMediaplayerDtoSchema = z.object({
     episodeId: z.string().uuid(),
     formatId: z.string().uuid(),
     url: z.string().length(2048),
-    fileId: z.string().length(2048).nullable().optional(),
-    startIntro: z.number().int().min(0).max(4294967295).nullable().optional(),
-    endIntro: z.number().int().min(0).max(4294967295).nullable().optional(),
-    startEnding: z.number().int().min(0).max(4294967295).nullable().optional(),
-    endEnding: z.number().int().min(0).max(4294967295).nullable().optional(),
+    fileId: z.string().length(2048).nullish(),
+    startIntro: z.number().int().min(0).max(4294967295).nullish(),
+    endIntro: z.number().int().min(0).max(4294967295).nullish(),
+    startEnding: z.number().int().min(0).max(4294967295).nullish(),
+    endEnding: z.number().int().min(0).max(4294967295).nullish(),
     seoAddition: createSeoAdditionDtoSchema
 });
 

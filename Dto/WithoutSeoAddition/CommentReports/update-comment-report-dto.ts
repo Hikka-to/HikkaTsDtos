@@ -8,7 +8,7 @@ export const updateCommentReportDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     commentReportTypeId: z.string().uuid(),
-    body: z.string().length(2048).nullable().optional(),
+    body: z.string().length(2048).nullish(),
     id: z.string().uuid()
 });
 

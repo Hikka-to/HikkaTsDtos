@@ -9,12 +9,12 @@ export const getSeoAdditionDtoSchema = z.object({
     slug: z.string(),
     title: z.string(),
     description: z.string(),
-    image: z.string().nullable().optional(),
-    imageAlt: z.string().nullable().optional(),
-    socialTitle: z.string().nullable().optional(),
-    socialType: socialTypeSchema.nullable().optional(),
-    socialImage: z.string().nullable().optional(),
-    socialImageAlt: z.string().nullable().optional(),
+    image: z.string().nullish(),
+    imageAlt: z.string().nullish(),
+    socialTitle: z.string().nullish(),
+    socialType: socialTypeSchema.nullish(),
+    socialImage: z.string().nullish(),
+    socialImageAlt: z.string().nullish(),
     id: z.string().uuid()
 });
 

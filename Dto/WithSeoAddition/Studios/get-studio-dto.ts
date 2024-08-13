@@ -7,7 +7,7 @@ import { z } from 'zod';
 
 export const getStudioDtoSchema = z.object({
     name: z.string(),
-    logo: z.string().nullable().optional(),
+    logo: z.string().nullish(),
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });

@@ -1,6 +1,6 @@
 {
   "name": "hikka-ts-dtos",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "private": false,
   "description": "",
     "main": "dist/index.js",
@@ -14,6 +14,7 @@
     "prepublish": "npm run ctix && npm run build",
     "build": "tsc",
     "ctix": "npx ctix build",
+    "clean": "git clean -Xdf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

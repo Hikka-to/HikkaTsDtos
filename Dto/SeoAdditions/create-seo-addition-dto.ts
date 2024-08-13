@@ -9,12 +9,12 @@ export const createSeoAdditionDtoSchema = z.object({
     slug: z.string().length(128),
     title: z.string().length(128),
     description: z.string().length(278),
-    image: z.string().length(128).nullable().optional(),
-    imageAlt: z.string().length(256).nullable().optional(),
-    socialTitle: z.string().length(128).nullable().optional(),
-    socialType: socialTypeSchema.nullable().optional(),
-    socialImage: z.string().length(128).nullable().optional(),
-    socialImageAlt: z.string().length(256).nullable().optional()
+    image: z.string().length(128).nullish(),
+    imageAlt: z.string().length(256).nullish(),
+    socialTitle: z.string().length(128).nullish(),
+    socialType: socialTypeSchema.nullish(),
+    socialImage: z.string().length(128).nullish(),
+    socialImageAlt: z.string().length(256).nullish()
 });
 
 export type CreateSeoAdditionDto = z.infer<typeof createSeoAdditionDtoSchema>;

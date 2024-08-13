@@ -7,7 +7,7 @@ import { z } from 'zod';
 
 export const createStudioDtoSchema = z.object({
     name: z.string().length(128),
-    logo: z.string().length(2048).nullable().optional(),
+    logo: z.string().length(2048).nullish(),
     seoAddition: createSeoAdditionDtoSchema
 });
 

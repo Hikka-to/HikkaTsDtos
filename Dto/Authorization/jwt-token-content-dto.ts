@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const jwtTokenContentDtoSchema = z.object({
-    email: z.string().nullable().optional(),
-    id: z.string().nullable().optional(),
-    role: z.string().nullable().optional()
+    email: z.string().nullish(),
+    id: z.string().nullish(),
+    role: z.string().nullish()
 });
 
 export type JwtTokenContentDto = z.infer<typeof jwtTokenContentDtoSchema>;

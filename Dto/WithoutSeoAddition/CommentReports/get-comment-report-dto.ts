@@ -11,7 +11,7 @@ export const getCommentReportDtoSchema = z.object({
     comment: getCommentDtoSchema,
     user: getUserDtoSchema,
     commentReportType: getCommentReportTypeDtoSchema,
-    body: z.string().nullable().optional(),
+    body: z.string().nullish(),
     id: z.string().uuid()
 });
 

@@ -7,7 +7,7 @@ import { z } from 'zod';
 
 export const createDubDtoSchema = z.object({
     name: z.string().length(128),
-    icon: z.string().length(2048).nullable().optional(),
+    icon: z.string().length(2048).nullish(),
     seoAddition: createSeoAdditionDtoSchema
 });
 

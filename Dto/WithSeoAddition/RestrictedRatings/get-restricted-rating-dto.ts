@@ -9,7 +9,7 @@ export const getRestrictedRatingDtoSchema = z.object({
     name: z.string(),
     value: z.number().int(),
     hint: z.string(),
-    icon: z.string().nullable().optional(),
+    icon: z.string().nullish(),
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });

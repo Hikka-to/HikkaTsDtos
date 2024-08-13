@@ -20,7 +20,7 @@
       // build mode
       // - create: create an `index.ts` file in each directory
       // - bundle: bundle all export information in one `index.ts` file
-      "mode": "create",
+      "mode": "bundle",
       // tsconfig.json path: you must pass path with filename, like this "./tsconfig.json"
       // only work root directory or cli parameter
       // 
