@@ -9,4 +9,4 @@ export const returnPageDtoSchema = <T extends z.ZodTypeAny>(t: T) => z.object({
     howManyPages: z.number().int()
 });
 
-export type ReturnPageDto<T extends z.ZodTypeAny> = z.infer<ReturnType<typeof returnPageDtoSchema<T>>>;
+export type ReturnPageDto<T> = z.infer<ReturnType<typeof returnPageDtoSchema<z.ZodType<T>>>>;
