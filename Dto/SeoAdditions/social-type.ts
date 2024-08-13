@@ -19,6 +19,4 @@ export enum SocialType {
     MusicRadioStation = 11,
 }
 
-export const socialTypeKeys = Object.keys(SocialType) as [keyof typeof SocialType]
-
-export const socialTypeSchema = z.enum(socialTypeKeys)
+export const socialTypeSchema = z.nativeEnum(SocialType);

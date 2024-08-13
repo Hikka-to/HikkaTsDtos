@@ -9,6 +9,4 @@ export enum SortOrder {
     Desc = 1,
 }
 
-export const sortOrderKeys = Object.keys(SortOrder) as [keyof typeof SortOrder]
-
-export const sortOrderSchema = z.enum(sortOrderKeys)
+export const sortOrderSchema = z.nativeEnum(SortOrder);
