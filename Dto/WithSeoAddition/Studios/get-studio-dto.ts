@@ -11,5 +11,3 @@ export const getStudioDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetStudioDto = z.infer<typeof getStudioDtoSchema>;

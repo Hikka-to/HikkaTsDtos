@@ -10,5 +10,3 @@ export const getStatusDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetStatusDto = z.infer<typeof getStatusDtoSchema>;

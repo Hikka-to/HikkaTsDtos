@@ -17,5 +17,3 @@ export const getSeoAdditionDtoSchema = z.object({
     socialImageAlt: z.string().nullable().optional(),
     id: z.string().uuid()
 });
-
-export type GetSeoAdditionDto = z.infer<typeof getSeoAdditionDtoSchema>;

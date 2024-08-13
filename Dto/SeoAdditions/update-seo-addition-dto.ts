@@ -17,5 +17,3 @@ export const updateSeoAdditionDtoSchema = z.object({
     socialImage: z.string().nullable().optional(),
     socialImageAlt: z.string().nullable().optional()
 });
-
-export type UpdateSeoAdditionDto = z.infer<typeof updateSeoAdditionDtoSchema>;

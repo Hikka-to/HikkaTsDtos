@@ -4,10 +4,7 @@
  */
 import { z } from 'zod';
 
-
 export const getRelatedTypeDtoSchema = z.object({
     name: z.string(),
     id: z.string().uuid()
 });
-
-export type GetRelatedTypeDto = z.infer<typeof getRelatedTypeDtoSchema>;

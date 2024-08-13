@@ -10,5 +10,3 @@ export const createKindDtoSchema = z.object({
     hint: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateKindDto = z.infer<typeof createKindDtoSchema>;

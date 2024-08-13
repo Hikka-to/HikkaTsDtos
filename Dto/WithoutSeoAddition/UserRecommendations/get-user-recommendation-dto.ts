@@ -14,5 +14,3 @@ export const getUserRecommendationDtoSchema = z.object({
     updatedAt: z.date(),
     id: z.string().uuid()
 });
-
-export type GetUserRecommendationDto = z.infer<typeof getUserRecommendationDtoSchema>;

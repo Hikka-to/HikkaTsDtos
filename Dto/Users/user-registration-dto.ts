@@ -10,5 +10,3 @@ export const userRegistrationDtoSchema = z.object({
     password: z.string().regex(/\S/).regex(/^.{6,}$/),
     role: z.string().regex(/\S/)
 });
-
-export type UserRegistrationDto = z.infer<typeof userRegistrationDtoSchema>;

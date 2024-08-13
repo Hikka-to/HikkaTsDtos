@@ -11,5 +11,3 @@ export const createLanguageDtoSchema = z.object({
     icon: z.string().length(2048),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateLanguageDto = z.infer<typeof createLanguageDtoSchema>;

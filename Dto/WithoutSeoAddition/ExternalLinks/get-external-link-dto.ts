@@ -4,11 +4,8 @@
  */
 import { z } from 'zod';
 
-
 export const getExternalLinkDtoSchema = z.object({
     animeId: z.string().uuid(),
     url: z.string(),
     id: z.string().uuid()
 });
-
-export type GetExternalLinkDto = z.infer<typeof getExternalLinkDtoSchema>;

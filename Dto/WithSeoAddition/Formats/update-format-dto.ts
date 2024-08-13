@@ -10,5 +10,3 @@ export const updateFormatDtoSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type UpdateFormatDto = z.infer<typeof updateFormatDtoSchema>;

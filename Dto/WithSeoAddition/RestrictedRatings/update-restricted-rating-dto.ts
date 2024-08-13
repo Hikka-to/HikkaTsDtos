@@ -13,5 +13,3 @@ export const updateRestrictedRatingDtoSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type UpdateRestrictedRatingDto = z.infer<typeof updateRestrictedRatingDtoSchema>;

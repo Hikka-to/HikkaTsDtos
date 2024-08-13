@@ -4,11 +4,8 @@
  */
 import { z } from 'zod';
 
-
 export const getSearchHistoryDtoSchema = z.object({
     query: z.string(),
     createAt: z.date(),
     id: z.string().uuid()
 });
-
-export type GetSearchHistoryDto = z.infer<typeof getSearchHistoryDtoSchema>;

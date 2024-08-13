@@ -13,5 +13,3 @@ export const createEpisodeDtoSchema = z.object({
     isFiller: z.boolean(),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateEpisodeDto = z.infer<typeof createEpisodeDtoSchema>;

@@ -14,5 +14,3 @@ export const getCommentReportDtoSchema = z.object({
     body: z.string().nullable().optional(),
     id: z.string().uuid()
 });
-
-export type GetCommentReportDto = z.infer<typeof getCommentReportDtoSchema>;

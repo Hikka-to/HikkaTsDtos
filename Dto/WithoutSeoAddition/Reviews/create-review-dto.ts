@@ -12,5 +12,3 @@ export const createReviewDtoSchema = z.object({
     createdAt: z.date(),
     removedAt: z.date()
 });
-
-export type CreateReviewDto = z.infer<typeof createReviewDtoSchema>;

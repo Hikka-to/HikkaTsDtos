@@ -13,5 +13,3 @@ export const getRestrictedRatingDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetRestrictedRatingDto = z.infer<typeof getRestrictedRatingDtoSchema>;

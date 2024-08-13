@@ -4,12 +4,9 @@
  */
 import { z } from 'zod';
 
-
 export const getCommentLikeDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     isLiked: z.boolean(),
     id: z.string().uuid()
 });
-
-export type GetCommentLikeDto = z.infer<typeof getCommentLikeDtoSchema>;

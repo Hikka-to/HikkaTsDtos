@@ -4,7 +4,6 @@
  */
 import { z } from 'zod';
 
-
 export const updateCommentReportDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
@@ -12,5 +11,3 @@ export const updateCommentReportDtoSchema = z.object({
     body: z.string().length(2048).nullable().optional(),
     id: z.string().uuid()
 });
-
-export type UpdateCommentReportDto = z.infer<typeof updateCommentReportDtoSchema>;

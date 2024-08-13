@@ -28,5 +28,3 @@ export const getLightAnimeDtoSchema = z.object({
     isPublished: z.boolean(),
     publishedAt: z.date().nullable().optional()
 });
-
-export type GetLightAnimeDto = z.infer<typeof getLightAnimeDtoSchema>;

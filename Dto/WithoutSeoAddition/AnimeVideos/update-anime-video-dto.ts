@@ -4,7 +4,6 @@
  */
 import { z } from 'zod';
 
-
 export const updateAnimeVideoDtoSchema = z.object({
     animeVideoKindId: z.string().uuid(),
     name: z.string().length(156),
@@ -13,5 +12,3 @@ export const updateAnimeVideoDtoSchema = z.object({
     embedUrl: z.string().length(2048),
     id: z.string().uuid()
 });
-
-export type UpdateAnimeVideoDto = z.infer<typeof updateAnimeVideoDtoSchema>;

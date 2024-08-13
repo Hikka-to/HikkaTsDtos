@@ -7,5 +7,3 @@
 export const createAnimeVideoKindDtoSchema = z.object({
     name: z.string().length(156)
 });
-
-export type CreateAnimeVideoKindDto = z.infer<typeof createAnimeVideoKindDtoSchema>;

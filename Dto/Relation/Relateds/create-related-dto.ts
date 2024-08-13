@@ -9,5 +9,3 @@ export const createRelatedDtoSchema = z.object({
     animeGroupId: z.string().uuid(),
     relatedTypeId: z.string().uuid()
 });
-
-export type CreateRelatedDto = z.infer<typeof createRelatedDtoSchema>;

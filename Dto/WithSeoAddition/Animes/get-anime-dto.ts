@@ -50,5 +50,3 @@ export const getAnimeDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetAnimeDto = z.infer<typeof getAnimeDtoSchema>;

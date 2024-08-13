@@ -4,11 +4,8 @@
  */
 import { z } from 'zod';
 
-
 export const getMediaplayerDtoSchema = z.object({
     name: z.string(),
     icon: z.string(),
     id: z.string().uuid()
 });
-
-export type GetMediaplayerDto = z.infer<typeof getMediaplayerDtoSchema>;

@@ -21,5 +21,3 @@ export const getUserDtoSchema = z.object({
     createdAt: z.date(),
     id: z.string().uuid()
 });
-
-export type GetUserDto = z.infer<typeof getUserDtoSchema>;

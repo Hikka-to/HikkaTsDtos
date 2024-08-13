@@ -8,5 +8,3 @@ import { createSeoAdditionDtoSchema } from "../Dto/SeoAdditions/create-seo-addit
 export const createDtoWithSeoAdditionSchema = z.object({
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateDtoWithSeoAddition = z.infer<typeof createDtoWithSeoAdditionSchema>;

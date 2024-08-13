@@ -10,5 +10,3 @@ export const createDubDtoSchema = z.object({
     icon: z.string().length(2048).nullable().optional(),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateDubDto = z.infer<typeof createDubDtoSchema>;

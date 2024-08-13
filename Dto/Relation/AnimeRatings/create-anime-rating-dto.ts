@@ -10,5 +10,3 @@ export const createAnimeRatingDtoSchema = z.object({
     animeId: z.string().uuid(),
     number: z.number().int().min(0).max(10)
 });
-
-export type CreateAnimeRatingDto = z.infer<typeof createAnimeRatingDtoSchema>;

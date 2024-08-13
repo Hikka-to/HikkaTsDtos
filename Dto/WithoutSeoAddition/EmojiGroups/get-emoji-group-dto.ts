@@ -4,11 +4,8 @@
  */
 import { z } from 'zod';
 
-
 export const getEmojiGroupDtoSchema = z.object({
     name: z.string(),
     slug: z.string(),
     id: z.string().uuid()
 });
-
-export type GetEmojiGroupDto = z.infer<typeof getEmojiGroupDtoSchema>;

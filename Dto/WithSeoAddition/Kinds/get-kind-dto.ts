@@ -11,5 +11,3 @@ export const getKindDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetKindDto = z.infer<typeof getKindDtoSchema>;

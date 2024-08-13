@@ -7,5 +7,3 @@
 export const createRelatedTypeDtoSchema = z.object({
     name: z.string().length(128)
 });
-
-export type CreateRelatedTypeDto = z.infer<typeof createRelatedTypeDtoSchema>;

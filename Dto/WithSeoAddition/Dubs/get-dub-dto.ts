@@ -11,5 +11,3 @@ export const getDubDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetDubDto = z.infer<typeof getDubDtoSchema>;

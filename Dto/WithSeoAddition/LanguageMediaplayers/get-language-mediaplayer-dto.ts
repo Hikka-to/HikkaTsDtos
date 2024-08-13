@@ -23,5 +23,3 @@ export const getLanguageMediaplayerDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
-
-export type GetLanguageMediaplayerDto = z.infer<typeof getLanguageMediaplayerDtoSchema>;

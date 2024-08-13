@@ -8,5 +8,3 @@ export const createExternalLinkDtoSchema = z.object({
     animeId: z.string().uuid(),
     url: z.string().length(2048)
 });
-
-export type CreateExternalLinkDto = z.infer<typeof createExternalLinkDtoSchema>;

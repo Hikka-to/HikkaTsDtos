@@ -7,5 +7,3 @@
 export const modelDtoSchema = z.object({
     id: z.string().uuid()
 });
-
-export type ModelDto = z.infer<typeof modelDtoSchema>;

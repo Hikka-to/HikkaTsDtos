@@ -12,5 +12,3 @@ export const createRestrictedRatingDtoSchema = z.object({
     icon: z.string().length(128).nullable().optional(),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateRestrictedRatingDto = z.infer<typeof createRestrictedRatingDtoSchema>;

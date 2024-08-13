@@ -14,5 +14,3 @@ export const getUserWatchHistoryDtoSchema = z.object({
     createdAt: z.date(),
     id: z.string().uuid()
 });
-
-export type GetUserWatchHistoryDto = z.infer<typeof getUserWatchHistoryDtoSchema>;

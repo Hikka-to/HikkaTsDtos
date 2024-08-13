@@ -7,5 +7,3 @@
 export const createAnimeGroupDtoSchema = z.object({
     name: z.string().length(128)
 });
-
-export type CreateAnimeGroupDto = z.infer<typeof createAnimeGroupDtoSchema>;

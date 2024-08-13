@@ -11,5 +11,3 @@ export const createAnimeVideoDtoSchema = z.object({
     imageUrl: z.string().length(2048),
     embedUrl: z.string().length(2048)
 });
-
-export type CreateAnimeVideoDto = z.infer<typeof createAnimeVideoDtoSchema>;

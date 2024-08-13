@@ -4,7 +4,6 @@
  */
 import { z } from 'zod';
 
-
 export const getUserSettingDtoSchema = z.object({
     isAutoNext: z.boolean(),
     isAutoPlay: z.boolean(),
@@ -14,5 +13,3 @@ export const getUserSettingDtoSchema = z.object({
     isPrivateAnimeList: z.boolean(),
     id: z.string().uuid()
 });
-
-export type GetUserSettingDto = z.infer<typeof getUserSettingDtoSchema>;

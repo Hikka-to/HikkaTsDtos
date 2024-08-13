@@ -12,5 +12,3 @@ export const getReviewLikeDtoSchema = z.object({
     isLiked: z.boolean(),
     id: z.string().uuid()
 });
-
-export type GetReviewLikeDto = z.infer<typeof getReviewLikeDtoSchema>;

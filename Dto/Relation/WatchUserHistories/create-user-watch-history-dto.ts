@@ -9,5 +9,3 @@ export const createUserWatchHistoryDtoSchema = z.object({
     episodeId: z.string().uuid(),
     progressTime: z.number().int()
 });
-
-export type CreateUserWatchHistoryDto = z.infer<typeof createUserWatchHistoryDtoSchema>;

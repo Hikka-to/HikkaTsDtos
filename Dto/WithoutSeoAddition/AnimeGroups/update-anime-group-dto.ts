@@ -4,10 +4,7 @@
  */
 import { z } from 'zod';
 
-
 export const updateAnimeGroupDtoSchema = z.object({
     name: z.string().length(128),
     id: z.string().uuid()
 });
-
-export type UpdateAnimeGroupDto = z.infer<typeof updateAnimeGroupDtoSchema>;

@@ -14,5 +14,3 @@ export const getUserAnimeListDtoSchema = z.object({
     isFavorite: z.boolean(),
     id: z.string().uuid()
 });
-
-export type GetUserAnimeListDto = z.infer<typeof getUserAnimeListDtoSchema>;

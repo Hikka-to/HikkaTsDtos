@@ -4,7 +4,6 @@
  */
 import { z } from 'zod';
 
-
 export const updateReviewDtoSchema = z.object({
     animeRatingId: z.string().uuid(),
     name: z.string().length(64),
@@ -14,5 +13,3 @@ export const updateReviewDtoSchema = z.object({
     removedAt: z.date(),
     id: z.string().uuid()
 });
-
-export type UpdateReviewDto = z.infer<typeof updateReviewDtoSchema>;

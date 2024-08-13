@@ -4,12 +4,9 @@
  */
 import { z } from 'zod';
 
-
 export const updateUserAnimeListDtoSchema = z.object({
     userId: z.string().uuid(),
     animeId: z.string().uuid(),
     isFavorite: z.boolean(),
     id: z.string().uuid()
 });
-
-export type UpdateUserAnimeListDto = z.infer<typeof updateUserAnimeListDtoSchema>;

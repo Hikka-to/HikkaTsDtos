@@ -4,10 +4,7 @@
  */
 import { z } from 'zod';
 
-
 export const getResourceDtoSchema = z.object({
     slug: z.string(),
     id: z.string().uuid()
 });
-
-export type GetResourceDto = z.infer<typeof getResourceDtoSchema>;

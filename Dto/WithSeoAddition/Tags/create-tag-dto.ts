@@ -13,5 +13,3 @@ export const createTagDtoSchema = z.object({
     parentTagId: z.string().uuid().nullable().optional(),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateTagDto = z.infer<typeof createTagDtoSchema>;

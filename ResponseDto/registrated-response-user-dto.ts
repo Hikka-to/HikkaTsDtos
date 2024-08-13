@@ -4,11 +4,8 @@
  */
 import { z } from 'zod';
 
-
 export const registratedResponseUserDtoSchema = z.object({
     message: z.string(),
     jwtToken: z.string(),
     id: z.string().uuid()
 });
-
-export type RegistratedResponseUserDto = z.infer<typeof registratedResponseUserDtoSchema>;

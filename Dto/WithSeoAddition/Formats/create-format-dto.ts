@@ -9,5 +9,3 @@ export const createFormatDtoSchema = z.object({
     name: z.string().length(64),
     seoAddition: createSeoAdditionDtoSchema
 });
-
-export type CreateFormatDto = z.infer<typeof createFormatDtoSchema>;
