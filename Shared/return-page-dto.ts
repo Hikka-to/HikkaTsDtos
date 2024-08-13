@@ -4,7 +4,7 @@
  */
 import { z } from 'zod';
 
-export const returnPageDtoSchema = (t: z.ZodTypeAny) => z.object({
+export const returnPageDtoSchema = <T extends z.ZodTypeAny>(t: T) => z.object({
     models: z.array(t),
     howManyPages: z.number().int()
 });
