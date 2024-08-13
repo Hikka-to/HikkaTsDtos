@@ -2,16 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
-
-import { GetDtoWithSeoAddition } from "../../../Shared/get-dto-with-seo-addition";import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
+import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
 import { z } from 'zod';
-
-export interface GetCollectionDto extends GetDtoWithSeoAddition {
-    name: string;
-    description: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
 
 export const getCollectionDtoSchema = z.object({
     name: z.string(),
@@ -21,3 +13,5 @@ export const getCollectionDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type GetCollectionDto = z.infer<typeof getCollectionDtoSchema>;

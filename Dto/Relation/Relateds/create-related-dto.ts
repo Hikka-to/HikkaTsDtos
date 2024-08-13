@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateRelatedDto {
-    animeId: string;
-    animeGroupId: string;
-    relatedTypeId: string;
-}
-
 export const createRelatedDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),
     relatedTypeId: z.string().uuid()
 });
+
+export type CreateRelatedDto = z.infer<typeof createRelatedDtoSchema>;

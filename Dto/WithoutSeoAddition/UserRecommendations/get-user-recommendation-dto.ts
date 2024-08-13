@@ -3,17 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";
-import { GetAnimeDto, getAnimeDtoSchema } from "../../WithSeoAddition/Animes/get-anime-dto";import { z } from 'zod';
-
-export interface GetUserRecommendationDto extends ModelDto {
-    user: GetUserDto;
-    anime: GetAnimeDto;
-    description: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
+import { getUserDtoSchema } from "../../Users/get-user-dto";
+import { getAnimeDtoSchema } from "../../WithSeoAddition/Animes/get-anime-dto";import { z } from 'zod';
 
 export const getUserRecommendationDtoSchema = z.object({
     user: getUserDtoSchema,
@@ -23,3 +14,5 @@ export const getUserRecommendationDtoSchema = z.object({
     updatedAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetUserRecommendationDto = z.infer<typeof getUserRecommendationDtoSchema>;

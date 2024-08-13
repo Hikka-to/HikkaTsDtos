@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface FilterDto {
-    searchTerm: string;
-    column: string;
-    isStrict: boolean;
-}
-
 export const filterDtoSchema = z.object({
     searchTerm: z.string(),
     column: z.string(),
     isStrict: z.boolean()
 });
+
+export type FilterDto = z.infer<typeof filterDtoSchema>;

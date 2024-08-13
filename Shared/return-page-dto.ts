@@ -4,12 +4,9 @@
  */
 import { z, ZodTypeAny } from 'zod';
 
-export interface ReturnPageDto<T> {
-    models: T[];
-    howManyPages: number;
-}
-
 export const returnPageDtoSchema = (t: ZodTypeAny) => z.object({
     models: z.array(t),
     howManyPages: z.number().int()
 });
+
+export type ReturnPageDto = z.infer<typeof returnPageDtoSchema>;

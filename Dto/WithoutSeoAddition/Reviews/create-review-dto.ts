@@ -4,15 +4,6 @@
  */
 import { z } from 'zod';
 
-export interface CreateReviewDto {
-    animeRatingId: string;
-    name: string;
-    body: string;
-    updatedAt: Date;
-    createdAt: Date;
-    removedAt: Date;
-}
-
 export const createReviewDtoSchema = z.object({
     animeRatingId: z.string().uuid(),
     name: z.string().length(64),
@@ -21,3 +12,5 @@ export const createReviewDtoSchema = z.object({
     createdAt: z.date(),
     removedAt: z.date()
 });
+
+export type CreateReviewDto = z.infer<typeof createReviewDtoSchema>;

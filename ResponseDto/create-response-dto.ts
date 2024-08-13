@@ -4,10 +4,8 @@
  */
 import { z } from 'zod';
 
-export interface CreateResponseDto {
-    id: string;
-}
-
 export const createResponseDtoSchema = z.object({
     id: z.string().uuid()
 });
+
+export type CreateResponseDto = z.infer<typeof createResponseDtoSchema>;

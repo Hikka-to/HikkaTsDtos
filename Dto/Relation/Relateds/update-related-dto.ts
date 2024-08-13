@@ -2,14 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
+import { z } from 'zod';
 
-import { ModelDto } from "../../../Shared/model-dto";import { z } from 'zod';
-
-export interface UpdateRelatedDto extends ModelDto {
-    animeId: string;
-    animeGroupId: string;
-    relatedTypeId: string;
-}
 
 export const updateRelatedDtoSchema = z.object({
     animeId: z.string().uuid(),
@@ -17,3 +11,5 @@ export const updateRelatedDtoSchema = z.object({
     relatedTypeId: z.string().uuid(),
     id: z.string().uuid()
 });
+
+export type UpdateRelatedDto = z.infer<typeof updateRelatedDtoSchema>;

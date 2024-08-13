@@ -3,15 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { FilterDto, filterDtoSchema } from "./filter-dto";
-import { SortDto, sortDtoSchema } from "./sort-dto";import { z } from 'zod';
-
-export interface FilterPaginationDto {
-    pageNumber: number;
-    pageSize: number;
-    filters: FilterDto[][];
-    sorts: SortDto[];
-}
+import { filterDtoSchema } from "./filter-dto";
+import { sortDtoSchema } from "./sort-dto";import { z } from 'zod';
 
 export const filterPaginationDtoSchema = z.object({
     pageNumber: z.number().int().min(1).max(2147483647),
@@ -19,3 +12,5 @@ export const filterPaginationDtoSchema = z.object({
     filters: z.array(z.array(filterDtoSchema)),
     sorts: z.array(sortDtoSchema)
 });
+
+export type FilterPaginationDto = z.infer<typeof filterPaginationDtoSchema>;

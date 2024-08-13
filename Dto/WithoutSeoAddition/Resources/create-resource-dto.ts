@@ -4,10 +4,8 @@
  */
 import { z } from 'zod';
 
-export interface CreateResourceDto {
-    slug: string;
-}
-
 export const createResourceDtoSchema = z.object({
     slug: z.string().length(128)
 });
+
+export type CreateResourceDto = z.infer<typeof createResourceDtoSchema>;

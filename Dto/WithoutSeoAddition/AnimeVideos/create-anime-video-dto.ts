@@ -4,14 +4,6 @@
  */
 import { z } from 'zod';
 
-export interface CreateAnimeVideoDto {
-    animeVideoKindId: string;
-    name: string;
-    url: string;
-    imageUrl: string;
-    embedUrl: string;
-}
-
 export const createAnimeVideoDtoSchema = z.object({
     animeVideoKindId: z.string().uuid(),
     name: z.string().length(156),
@@ -19,3 +11,5 @@ export const createAnimeVideoDtoSchema = z.object({
     imageUrl: z.string().length(2048),
     embedUrl: z.string().length(2048)
 });
+
+export type CreateAnimeVideoDto = z.infer<typeof createAnimeVideoDtoSchema>;

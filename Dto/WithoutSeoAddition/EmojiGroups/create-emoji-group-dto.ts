@@ -4,12 +4,9 @@
  */
 import { z } from 'zod';
 
-export interface CreateEmojiGroupDto {
-    name: string;
-    slug: string;
-}
-
 export const createEmojiGroupDtoSchema = z.object({
     name: z.string().length(64),
     slug: z.string().length(128)
 });
+
+export type CreateEmojiGroupDto = z.infer<typeof createEmojiGroupDtoSchema>;

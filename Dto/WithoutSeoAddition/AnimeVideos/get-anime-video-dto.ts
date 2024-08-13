@@ -2,16 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
+import { z } from 'zod';
 
-import { ModelDto } from "../../../Shared/model-dto";import { z } from 'zod';
-
-export interface GetAnimeVideoDto extends ModelDto {
-    animeVideoKindId: string;
-    name: string;
-    url: string;
-    imageUrl: string;
-    embedUrl: string;
-}
 
 export const getAnimeVideoDtoSchema = z.object({
     animeVideoKindId: z.string().uuid(),
@@ -21,3 +13,5 @@ export const getAnimeVideoDtoSchema = z.object({
     embedUrl: z.string(),
     id: z.string().uuid()
 });
+
+export type GetAnimeVideoDto = z.infer<typeof getAnimeVideoDtoSchema>;

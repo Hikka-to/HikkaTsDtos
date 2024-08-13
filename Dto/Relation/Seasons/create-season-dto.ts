@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateSeasonDto {
-    animeId: string;
-    animeGroupId: string;
-    name: string;
-}
-
 export const createSeasonDtoSchema = z.object({
     animeId: z.string().uuid(),
     animeGroupId: z.string().uuid(),
     name: z.string()
 });
+
+export type CreateSeasonDto = z.infer<typeof createSeasonDtoSchema>;

@@ -2,14 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
+import { z } from 'zod';
 
-import { ModelDto } from "../../../Shared/model-dto";import { z } from 'zod';
-
-export interface UpdateCommentLikeDto extends ModelDto {
-    commentId: string;
-    userId: string;
-    isLiked: boolean;
-}
 
 export const updateCommentLikeDtoSchema = z.object({
     commentId: z.string().uuid(),
@@ -17,3 +11,5 @@ export const updateCommentLikeDtoSchema = z.object({
     isLiked: z.boolean(),
     id: z.string().uuid()
 });
+
+export type UpdateCommentLikeDto = z.infer<typeof updateCommentLikeDtoSchema>;

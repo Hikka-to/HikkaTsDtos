@@ -3,15 +3,7 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-import { GetAnimeDto, getAnimeDtoSchema } from "../../WithSeoAddition/Animes/get-anime-dto";import { z } from 'zod';
-
-export interface GetProviderDto extends ModelDto {
-    anime: GetAnimeDto;
-    logoPath: string;
-    name: string;
-    priority: number;
-}
+import { getAnimeDtoSchema } from "../../WithSeoAddition/Animes/get-anime-dto";import { z } from 'zod';
 
 export const getProviderDtoSchema = z.object({
     anime: getAnimeDtoSchema,
@@ -20,3 +12,5 @@ export const getProviderDtoSchema = z.object({
     priority: z.number().int(),
     id: z.string().uuid()
 });
+
+export type GetProviderDto = z.infer<typeof getProviderDtoSchema>;

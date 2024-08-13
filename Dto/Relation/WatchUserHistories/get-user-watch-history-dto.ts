@@ -3,17 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";
-import { GetEpisodeDto, getEpisodeDtoSchema } from "../../WithSeoAddition/Episodes/get-episode-dto";import { z } from 'zod';
-
-export interface GetUserWatchHistoryDto extends ModelDto {
-    user: GetUserDto;
-    episode: GetEpisodeDto;
-    progressTime: number;
-    updatedAt: Date;
-    createdAt: Date;
-}
+import { getUserDtoSchema } from "../../Users/get-user-dto";
+import { getEpisodeDtoSchema } from "../../WithSeoAddition/Episodes/get-episode-dto";import { z } from 'zod';
 
 export const getUserWatchHistoryDtoSchema = z.object({
     user: getUserDtoSchema,
@@ -23,3 +14,5 @@ export const getUserWatchHistoryDtoSchema = z.object({
     createdAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetUserWatchHistoryDto = z.infer<typeof getUserWatchHistoryDtoSchema>;

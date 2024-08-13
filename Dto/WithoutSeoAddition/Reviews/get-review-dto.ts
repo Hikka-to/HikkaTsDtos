@@ -3,17 +3,7 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-import { GetAnimeRatingDto, getAnimeRatingDtoSchema } from "../../Relation/AnimeRatings/get-anime-rating-dto";import { z } from 'zod';
-
-export interface GetReviewDto extends ModelDto {
-    animeRating: GetAnimeRatingDto;
-    name: string;
-    body: string;
-    updatedAt: Date;
-    createdAt: Date;
-    removedAt: Date;
-}
+import { getAnimeRatingDtoSchema } from "../../Relation/AnimeRatings/get-anime-rating-dto";import { z } from 'zod';
 
 export const getReviewDtoSchema = z.object({
     animeRating: getAnimeRatingDtoSchema,
@@ -24,3 +14,5 @@ export const getReviewDtoSchema = z.object({
     removedAt: z.date(),
     id: z.string().uuid()
 });
+
+export type GetReviewDto = z.infer<typeof getReviewDtoSchema>;

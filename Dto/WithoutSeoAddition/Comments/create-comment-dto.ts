@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateCommentDto {
-    body: string;
-    userId: string;
-    parentId: string;
-}
-
 export const createCommentDtoSchema = z.object({
     body: z.string().max(2048),
     userId: z.string().uuid(),
     parentId: z.string().uuid()
 });
+
+export type CreateCommentDto = z.infer<typeof createCommentDtoSchema>;

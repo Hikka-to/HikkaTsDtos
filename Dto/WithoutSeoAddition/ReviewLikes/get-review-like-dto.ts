@@ -3,15 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "../../../Shared/model-dto";
-import { GetReviewDto, getReviewDtoSchema } from "../Reviews/get-review-dto";
-import { GetUserDto, getUserDtoSchema } from "../../Users/get-user-dto";import { z } from 'zod';
-
-export interface GetReviewLikeDto extends ModelDto {
-    review: GetReviewDto;
-    user: GetUserDto;
-    isLiked: boolean;
-}
+import { getReviewDtoSchema } from "../Reviews/get-review-dto";
+import { getUserDtoSchema } from "../../Users/get-user-dto";import { z } from 'zod';
 
 export const getReviewLikeDtoSchema = z.object({
     review: getReviewDtoSchema,
@@ -19,3 +12,5 @@ export const getReviewLikeDtoSchema = z.object({
     isLiked: z.boolean(),
     id: z.string().uuid()
 });
+
+export type GetReviewLikeDto = z.infer<typeof getReviewLikeDtoSchema>;

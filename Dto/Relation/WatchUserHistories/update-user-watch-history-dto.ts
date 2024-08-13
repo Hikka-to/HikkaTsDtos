@@ -2,14 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
+import { z } from 'zod';
 
-import { ModelDto } from "../../../Shared/model-dto";import { z } from 'zod';
-
-export interface UpdateUserWatchHistoryDto extends ModelDto {
-    userId: string;
-    episodeId: string;
-    progressTime: number;
-}
 
 export const updateUserWatchHistoryDtoSchema = z.object({
     userId: z.string().uuid(),
@@ -17,3 +11,5 @@ export const updateUserWatchHistoryDtoSchema = z.object({
     progressTime: z.number().int(),
     id: z.string().uuid()
 });
+
+export type UpdateUserWatchHistoryDto = z.infer<typeof updateUserWatchHistoryDtoSchema>;

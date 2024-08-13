@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateUserWatchHistoryDto {
-    userId: string;
-    episodeId: string;
-    progressTime: number;
-}
-
 export const createUserWatchHistoryDtoSchema = z.object({
     userId: z.string().uuid(),
     episodeId: z.string().uuid(),
     progressTime: z.number().int()
 });
+
+export type CreateUserWatchHistoryDto = z.infer<typeof createUserWatchHistoryDtoSchema>;

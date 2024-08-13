@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateCommentLikeDto {
-    commentId: string;
-    userId: string;
-    isLiked: boolean;
-}
-
 export const createCommentLikeDtoSchema = z.object({
     commentId: z.string().uuid(),
     userId: z.string().uuid(),
     isLiked: z.boolean()
 });
+
+export type CreateCommentLikeDto = z.infer<typeof createCommentLikeDtoSchema>;

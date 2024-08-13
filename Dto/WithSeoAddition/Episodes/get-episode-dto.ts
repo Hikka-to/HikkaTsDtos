@@ -2,19 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
-
-import { GetDtoWithSeoAddition } from "../../../Shared/get-dto-with-seo-addition";import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
+import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
 import { z } from 'zod';
-
-export interface GetEpisodeDto extends GetDtoWithSeoAddition {
-    animeId: string;
-    name: string;
-    duration: number;
-    airDate: Date;
-    isFiller: boolean;
-    updatedAt: Date;
-    createdAt: Date;
-}
 
 export const getEpisodeDtoSchema = z.object({
     animeId: z.string().uuid(),
@@ -27,3 +16,5 @@ export const getEpisodeDtoSchema = z.object({
     seoAddition: getSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type GetEpisodeDto = z.infer<typeof getEpisodeDtoSchema>;

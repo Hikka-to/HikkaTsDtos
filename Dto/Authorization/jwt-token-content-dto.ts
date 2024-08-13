@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface JwtTokenContentDto {
-    email: string;
-    id: string;
-    role: string;
-}
-
 export const jwtTokenContentDtoSchema = z.object({
-    email: z.string().nullable(),
-    id: z.string().nullable(),
-    role: z.string().nullable()
+    email: z.string().nullable().optional(),
+    id: z.string().nullable().optional(),
+    role: z.string().nullable().optional()
 });
+
+export type JwtTokenContentDto = z.infer<typeof jwtTokenContentDtoSchema>;

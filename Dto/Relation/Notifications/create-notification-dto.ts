@@ -4,14 +4,10 @@
  */
 import { z } from 'zod';
 
-export interface CreateNotificationDto {
-    userId: string;
-    animeId: string;
-    resourceId: string;
-}
-
 export const createNotificationDtoSchema = z.object({
     userId: z.string().uuid(),
     animeId: z.string().uuid(),
     resourceId: z.string().uuid()
 });
+
+export type CreateNotificationDto = z.infer<typeof createNotificationDtoSchema>;

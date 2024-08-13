@@ -3,14 +3,11 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-import { ModelDto } from "./model-dto";
-import { UpdateSeoAdditionDto, updateSeoAdditionDtoSchema } from "../Dto/SeoAdditions/update-seo-addition-dto";import { z } from 'zod';
-
-export interface UpdateDtoWithSeoAddition extends ModelDto {
-    seoAddition: UpdateSeoAdditionDto;
-}
+import { updateSeoAdditionDtoSchema } from "../Dto/SeoAdditions/update-seo-addition-dto";import { z } from 'zod';
 
 export const updateDtoWithSeoAdditionSchema = z.object({
     seoAddition: updateSeoAdditionDtoSchema,
     id: z.string().uuid()
 });
+
+export type UpdateDtoWithSeoAddition = z.infer<typeof updateDtoWithSeoAdditionSchema>;
