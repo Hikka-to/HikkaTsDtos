@@ -9,6 +9,7 @@ import { getPeriodDtoSchema } from "../Periods/get-period-dto";
 import { getRestrictedRatingDtoSchema } from "../RestrictedRatings/get-restricted-rating-dto";
 import { getSourceDtoSchema } from "../Sources/get-source-dto";
 import { getTagDtoSchema } from "../Tags/get-tag-dto";
+import { getLightCharacterDtoSchema } from "../Characters/get-light-character-dto";
 import { getCountryDtoSchema } from "../Countries/get-country-dto";
 import { getDubDtoSchema } from "../Dubs/get-dub-dto";
 import { getAnimeGroupDtoSchema } from "../../WithoutSeoAddition/AnimeGroups/get-anime-group-dto";
@@ -21,12 +22,13 @@ export const getAnimeDtoSchema = z.object({
     period: getPeriodDtoSchema,
     restrictedRating: getRestrictedRatingDtoSchema,
     source: getSourceDtoSchema,
-    tags: z.array(getTagDtoSchema),
-    countries: z.array(getCountryDtoSchema),
-    dubs: z.array(getDubDtoSchema),
-    relatedAnimeGroups: z.array(getAnimeGroupDtoSchema),
-    seasonAnimeGroups: z.array(getAnimeGroupDtoSchema),
-    similarAnimes: z.array(getLightAnimeDtoSchema),
+    tags: z.array(getTagDtoSchema.nullish()),
+    characters: z.array(getLightCharacterDtoSchema.nullish()),
+    countries: z.array(getCountryDtoSchema.nullish()),
+    dubs: z.array(getDubDtoSchema.nullish()),
+    relatedAnimeGroups: z.array(getAnimeGroupDtoSchema.nullish()),
+    seasonAnimeGroups: z.array(getAnimeGroupDtoSchema.nullish()),
+    similarAnimes: z.array(getLightAnimeDtoSchema.nullish()),
     name: z.string(),
     imageName: z.string().nullish(),
     romajiName: z.string().nullish(),

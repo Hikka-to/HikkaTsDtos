@@ -6,7 +6,8 @@
 import { getKindDtoSchema } from "../Kinds/get-kind-dto";
 import { getStatusDtoSchema } from "../Statuses/get-status-dto";
 import { getPeriodDtoSchema } from "../Periods/get-period-dto";
-import { getRestrictedRatingDtoSchema } from "../RestrictedRatings/get-restricted-rating-dto";import { z } from 'zod';
+import { getRestrictedRatingDtoSchema } from "../RestrictedRatings/get-restricted-rating-dto";import { getSeoAdditionDtoSchema } from '../../SeoAdditions/get-seo-addition-dto';
+import { z } from 'zod';
 
 export const getLightAnimeDtoSchema = z.object({
     kind: getKindDtoSchema,
@@ -26,7 +27,9 @@ export const getLightAnimeDtoSchema = z.object({
     tmdbScore: z.number(),
     imdbScore: z.number(),
     isPublished: z.boolean(),
-    publishedAt: z.date().nullish()
+    publishedAt: z.date().nullish(),
+    seoAddition: getSeoAdditionDtoSchema,
+    id: z.string().uuid()
 });
 
 export type GetLightAnimeDto = z.infer<typeof getLightAnimeDtoSchema>;

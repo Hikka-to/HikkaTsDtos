@@ -8,7 +8,8 @@ import { z } from 'zod';
 export const createTagDtoSchema = z.object({
     name: z.string().length(64),
     engName: z.string().length(64),
-    alises: z.array(z.string()),
+    alises: z.array(z.string().nullish()),
+    isCharacterTag: z.boolean(),
     isGenre: z.boolean(),
     parentTagId: z.string().uuid().nullish(),
     seoAddition: createSeoAdditionDtoSchema

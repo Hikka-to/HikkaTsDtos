@@ -6,7 +6,7 @@
 import { getUserDtoSchema } from "./get-user-dto";import { z } from 'zod';
 
 export const returnUserPageDtoSchema = z.object({
-    models: z.array(getUserDtoSchema),
+    models: z.array(getUserDtoSchema.nullish()),
     howManyPages: z.number().int()
 });
 
