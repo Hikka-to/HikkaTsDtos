@@ -9,8 +9,8 @@ import { sortDtoSchema } from "./sort-dto";import { z } from 'zod';
 export const filterPaginationDtoSchema = z.object({
     pageNumber: z.number().int().min(1).max(2147483647),
     pageSize: z.number().int().min(1).max(50),
-    filters: z.array(z.array(filterDtoSchema.nullish()).nullish()),
-    sorts: z.array(sortDtoSchema.nullish())
+    filters: z.array(z.array(filterDtoSchema)),
+    sorts: z.array(sortDtoSchema)
 });
 
 export type FilterPaginationDto = z.infer<typeof filterPaginationDtoSchema>;
