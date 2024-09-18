@@ -11,7 +11,7 @@ export const getLightCharacterDtoSchema = z.object({
     romajiName: z.string(),
     nativeName: z.string(),
     alternativeName: z.string().nullish(),
-    tags: z.array(getTagDtoSchema.nullish()),
+    tags: z.array(getTagDtoSchema),
     imageUrl: z.string(),
     description: z.string().nullish(),
     updatedAt: z.date(),

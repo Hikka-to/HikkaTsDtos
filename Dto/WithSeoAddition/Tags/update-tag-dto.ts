@@ -8,7 +8,7 @@ import { z } from 'zod';
 export const updateTagDtoSchema = z.object({
     name: z.string().length(64),
     engName: z.string().length(64),
-    alises: z.array(z.string().nullish()),
+    alises: z.array(z.string()),
     isCharacterTag: z.boolean(),
     isGenre: z.boolean(),
     parentTagId: z.string().uuid().nullish(),
