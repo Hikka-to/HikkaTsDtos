@@ -6,10 +6,10 @@
 import { z } from 'zod';
 
 export const getKindDtoSchema = z.object({
-    slug: z.string(),
-    hint: z.string(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'slug': z.string(),
+	'hint': z.string(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetKindDto = z.infer<typeof getKindDtoSchema>;

@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const updateSearchHistoryDtoSchema = z.object({
-    query: z.string().length(255),
-    createAt: z.date(),
-    id: z.string().uuid()
+	'query': z.string().max(255),
+	'createAt': z.date(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateSearchHistoryDto = z.infer<typeof updateSearchHistoryDtoSchema>;

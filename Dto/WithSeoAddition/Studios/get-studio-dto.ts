@@ -6,10 +6,10 @@
 import { z } from 'zod';
 
 export const getStudioDtoSchema = z.object({
-    name: z.string(),
-    logo: z.string().nullish(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'logo': z.string().nullish(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetStudioDto = z.infer<typeof getStudioDtoSchema>;

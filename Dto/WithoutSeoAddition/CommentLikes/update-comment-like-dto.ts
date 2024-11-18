@@ -5,10 +5,10 @@
 import { z } from 'zod';
 
 export const updateCommentLikeDtoSchema = z.object({
-    commentId: z.string().uuid(),
-    userId: z.string().uuid(),
-    isLiked: z.boolean(),
-    id: z.string().uuid()
+	'commentId': z.string().uuid(),
+	'userId': z.string().uuid(),
+	'isLiked': z.boolean(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateCommentLikeDto = z.infer<typeof updateCommentLikeDtoSchema>;

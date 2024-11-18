@@ -5,8 +5,8 @@
 import { z } from 'zod';
 
 export const updateResourceDtoSchema = z.object({
-    slug: z.string().length(128),
-    id: z.string().uuid()
+	'slug': z.string().max(128),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateResourceDto = z.infer<typeof updateResourceDtoSchema>;

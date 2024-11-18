@@ -6,10 +6,10 @@
 import { z } from 'zod';
 
 export const updateDubDtoSchema = z.object({
-    name: z.string().length(128),
-    icon: z.string().length(2048).nullish(),
-    seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string().max(128),
+	'icon': z.string().max(2048).nullish(),
+	'seoAddition': updateSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateDubDto = z.infer<typeof updateDubDtoSchema>;

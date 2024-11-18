@@ -6,11 +6,11 @@
 import { z } from 'zod';
 
 export const createRestrictedRatingDtoSchema = z.object({
-    name: z.string().length(10),
-    value: z.number().int(),
-    hint: z.string().length(64),
-    icon: z.string().length(128).nullish(),
-    seoAddition: createSeoAdditionDtoSchema
+	'name': z.string().max(10),
+	'value': z.number().int(),
+	'hint': z.string().max(64),
+	'icon': z.string().max(128).nullish(),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreateRestrictedRatingDto = z.infer<typeof createRestrictedRatingDtoSchema>;

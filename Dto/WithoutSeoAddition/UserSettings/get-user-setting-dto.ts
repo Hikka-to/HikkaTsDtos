@@ -5,13 +5,13 @@
 import { z } from 'zod';
 
 export const getUserSettingDtoSchema = z.object({
-    isAutoNext: z.boolean(),
-    isAutoPlay: z.boolean(),
-    isAutoSkipIntro: z.boolean(),
-    isDub: z.boolean(),
-    isRomaji: z.boolean(),
-    isPrivateAnimeList: z.boolean(),
-    id: z.string().uuid()
+	'isAutoNext': z.boolean(),
+	'isAutoPlay': z.boolean(),
+	'isAutoSkipIntro': z.boolean(),
+	'isDub': z.boolean(),
+	'isRomaji': z.boolean(),
+	'isPrivateAnimeList': z.boolean(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetUserSettingDto = z.infer<typeof getUserSettingDtoSchema>;

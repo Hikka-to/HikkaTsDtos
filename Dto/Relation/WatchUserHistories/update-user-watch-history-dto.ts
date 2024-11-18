@@ -5,10 +5,10 @@
 import { z } from 'zod';
 
 export const updateUserWatchHistoryDtoSchema = z.object({
-    userId: z.string().uuid(),
-    episodeId: z.string().uuid(),
-    progressTime: z.number().int(),
-    id: z.string().uuid()
+	'userId': z.string().uuid(),
+	'episodeId': z.string().uuid(),
+	'progressTime': z.number().int(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateUserWatchHistoryDto = z.infer<typeof updateUserWatchHistoryDtoSchema>;

@@ -5,8 +5,8 @@
 import { z } from 'zod';
 
 export const updateAnimeVideoKindDtoSchema = z.object({
-    name: z.string().length(156),
-    id: z.string().uuid()
+	'name': z.string().max(156),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateAnimeVideoKindDto = z.infer<typeof updateAnimeVideoKindDtoSchema>;

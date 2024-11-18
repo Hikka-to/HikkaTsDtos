@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const updateExternalLinkDtoSchema = z.object({
-    animeId: z.string().uuid(),
-    url: z.string().length(2048),
-    id: z.string().uuid()
+	'animeId': z.string().uuid(),
+	'url': z.string().max(2048),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateExternalLinkDto = z.infer<typeof updateExternalLinkDtoSchema>;

@@ -6,14 +6,14 @@
 import { z } from 'zod';
 
 export const getTagDtoSchema = z.object({
-    name: z.string(),
-    engName: z.string(),
-    alises: z.array(z.string()),
-    isCharacterTag: z.boolean(),
-    isGenre: z.boolean(),
-    parentTagId: z.string().uuid().nullish(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'engName': z.string(),
+	'alises': z.array(z.string()),
+	'isCharacterTag': z.boolean(),
+	'isGenre': z.boolean(),
+	'parentTagId': z.string().uuid().nullish(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetTagDto = z.infer<typeof getTagDtoSchema>;

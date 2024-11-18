@@ -5,8 +5,8 @@
 import { z } from 'zod';
 
 export const updateRelatedTypeDtoSchema = z.object({
-    name: z.string().length(128),
-    id: z.string().uuid()
+	'name': z.string().max(128),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateRelatedTypeDto = z.infer<typeof updateRelatedTypeDtoSchema>;

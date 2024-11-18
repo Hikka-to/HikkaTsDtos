@@ -6,11 +6,11 @@
 import { z } from 'zod';
 
 export const getLanguageDtoSchema = z.object({
-    name: z.string(),
-    locale: z.string(),
-    icon: z.string(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'locale': z.string(),
+	'icon': z.string(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetLanguageDto = z.infer<typeof getLanguageDtoSchema>;

@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const getSourceDtoSchema = z.object({
-    name: z.string(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetSourceDto = z.infer<typeof getSourceDtoSchema>;

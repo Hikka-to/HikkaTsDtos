@@ -6,12 +6,12 @@
 import { z } from 'zod';
 
 export const getCollectionDtoSchema = z.object({
-    name: z.string(),
-    description: z.string(),
-    createdAt: z.date(),
-    updatedAt: z.date(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'description': z.string(),
+	'createdAt': z.date(),
+	'updatedAt': z.date(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetCollectionDto = z.infer<typeof getCollectionDtoSchema>;

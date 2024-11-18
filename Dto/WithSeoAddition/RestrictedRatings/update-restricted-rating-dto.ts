@@ -6,12 +6,12 @@
 import { z } from 'zod';
 
 export const updateRestrictedRatingDtoSchema = z.object({
-    name: z.string().length(10),
-    value: z.number().int(),
-    hint: z.string().length(64),
-    icon: z.string().length(128).nullish(),
-    seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string().max(10),
+	'value': z.number().int(),
+	'hint': z.string().max(64),
+	'icon': z.string().max(128).nullish(),
+	'seoAddition': updateSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateRestrictedRatingDto = z.infer<typeof updateRestrictedRatingDtoSchema>;

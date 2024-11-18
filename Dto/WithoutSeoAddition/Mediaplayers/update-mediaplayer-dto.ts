@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const updateMediaplayerDtoSchema = z.object({
-    name: z.string().length(128),
-    icon: z.string().length(2048),
-    id: z.string().uuid()
+	'name': z.string().max(128),
+	'icon': z.string().max(2048),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateMediaplayerDto = z.infer<typeof updateMediaplayerDtoSchema>;

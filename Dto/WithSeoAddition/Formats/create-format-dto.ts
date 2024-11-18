@@ -6,8 +6,8 @@
 import { z } from 'zod';
 
 export const createFormatDtoSchema = z.object({
-    name: z.string().length(64),
-    seoAddition: createSeoAdditionDtoSchema
+	'name': z.string().max(64),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreateFormatDto = z.infer<typeof createFormatDtoSchema>;

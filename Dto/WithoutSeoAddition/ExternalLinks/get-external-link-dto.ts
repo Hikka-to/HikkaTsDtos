@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const getExternalLinkDtoSchema = z.object({
-    animeId: z.string().uuid(),
-    url: z.string(),
-    id: z.string().uuid()
+	'animeId': z.string().uuid(),
+	'url': z.string(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetExternalLinkDto = z.infer<typeof getExternalLinkDtoSchema>;

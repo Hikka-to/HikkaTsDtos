@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const getStatusDtoSchema = z.object({
-    name: z.string(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetStatusDto = z.infer<typeof getStatusDtoSchema>;

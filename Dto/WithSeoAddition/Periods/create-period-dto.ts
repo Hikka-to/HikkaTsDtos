@@ -6,8 +6,8 @@
 import { z } from 'zod';
 
 export const createPeriodDtoSchema = z.object({
-    name: z.string().length(24),
-    seoAddition: createSeoAdditionDtoSchema
+	'name': z.string().max(24),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreatePeriodDto = z.infer<typeof createPeriodDtoSchema>;

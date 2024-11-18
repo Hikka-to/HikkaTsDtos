@@ -6,12 +6,12 @@
 import { z } from 'zod';
 
 export const getRestrictedRatingDtoSchema = z.object({
-    name: z.string(),
-    value: z.number().int(),
-    hint: z.string(),
-    icon: z.string().nullish(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'name': z.string(),
+	'value': z.number().int(),
+	'hint': z.string(),
+	'icon': z.string().nullish(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetRestrictedRatingDto = z.infer<typeof getRestrictedRatingDtoSchema>;

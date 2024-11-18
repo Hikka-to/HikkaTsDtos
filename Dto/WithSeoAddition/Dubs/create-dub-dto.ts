@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const createDubDtoSchema = z.object({
-    name: z.string().length(128),
-    icon: z.string().length(2048).nullish(),
-    seoAddition: createSeoAdditionDtoSchema
+	'name': z.string().max(128),
+	'icon': z.string().max(2048).nullish(),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreateDubDto = z.infer<typeof createDubDtoSchema>;

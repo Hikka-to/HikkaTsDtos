@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const updateAlternativeNameDtoSchema = z.object({
-    animeId: z.string().uuid(),
-    name: z.string().length(156),
-    id: z.string().uuid()
+	'animeId': z.string().uuid(),
+	'name': z.string().max(156),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateAlternativeNameDto = z.infer<typeof updateAlternativeNameDtoSchema>;

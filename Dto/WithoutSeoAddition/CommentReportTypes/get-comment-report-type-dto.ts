@@ -5,8 +5,8 @@
 import { z } from 'zod';
 
 export const getCommentReportTypeDtoSchema = z.object({
-    slug: z.string(),
-    id: z.string().uuid()
+	'slug': z.string(),
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetCommentReportTypeDto = z.infer<typeof getCommentReportTypeDtoSchema>;

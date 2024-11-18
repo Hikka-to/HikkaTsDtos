@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const createKindDtoSchema = z.object({
-    slug: z.string().length(128),
-    hint: z.string().length(64),
-    seoAddition: createSeoAdditionDtoSchema
+	'slug': z.string().max(128),
+	'hint': z.string().max(64),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreateKindDto = z.infer<typeof createKindDtoSchema>;

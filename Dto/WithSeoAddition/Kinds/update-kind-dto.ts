@@ -6,10 +6,10 @@
 import { z } from 'zod';
 
 export const updateKindDtoSchema = z.object({
-    slug: z.string().length(128),
-    hint: z.string().length(64),
-    seoAddition: updateSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'slug': z.string().max(128),
+	'hint': z.string().max(64),
+	'seoAddition': updateSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type UpdateKindDto = z.infer<typeof updateKindDtoSchema>;

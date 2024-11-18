@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const createCountryDtoSchema = z.object({
-    name: z.string().length(64),
-    icon: z.string().length(2048),
-    seoAddition: createSeoAdditionDtoSchema
+	'name': z.string().max(64),
+	'icon': z.string().max(2048),
+	'seoAddition': createSeoAdditionDtoSchema
 });
 
 export type CreateCountryDto = z.infer<typeof createCountryDtoSchema>;

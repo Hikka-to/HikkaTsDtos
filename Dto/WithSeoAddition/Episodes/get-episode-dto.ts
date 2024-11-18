@@ -6,15 +6,15 @@
 import { z } from 'zod';
 
 export const getEpisodeDtoSchema = z.object({
-    animeId: z.string().uuid(),
-    name: z.string(),
-    duration: z.number().int(),
-    airDate: z.date(),
-    isFiller: z.boolean(),
-    updatedAt: z.date(),
-    createdAt: z.date(),
-    seoAddition: getSeoAdditionDtoSchema,
-    id: z.string().uuid()
+	'animeId': z.string().uuid(),
+	'name': z.string(),
+	'duration': z.number().int(),
+	'airDate': z.date(),
+	'isFiller': z.boolean(),
+	'updatedAt': z.date(),
+	'createdAt': z.date(),
+	'seoAddition': getSeoAdditionDtoSchema,
+	'id': z.string().uuid().regex(/\S/)
 });
 
 export type GetEpisodeDto = z.infer<typeof getEpisodeDtoSchema>;
