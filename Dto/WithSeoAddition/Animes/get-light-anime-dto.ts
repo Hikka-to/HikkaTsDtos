@@ -2,7 +2,8 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
-import { getStatusDtoSchema } from '../Statuses/get-status-dto';
+
+import { getStatusDtoSchema } from '../Statuses/get-status-dto';
 import { getRestrictedRatingDtoSchema } from '../RestrictedRatings/get-restricted-rating-dto';
 import { getPeriodDtoSchema } from '../Periods/get-period-dto';
 import { getKindDtoSchema } from '../Kinds/get-kind-dto';
