@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const createCollectionDtoSchema = z.object({
-	'name': z.string().max(64),
-	'description': z.string().max(256),
-	'seoAddition': createSeoAdditionDtoSchema
+    name: z.string().length(64),
+    description: z.string().length(256),
+    seoAddition: createSeoAdditionDtoSchema
 });
 
 export type CreateCollectionDto = z.infer<typeof createCollectionDtoSchema>;

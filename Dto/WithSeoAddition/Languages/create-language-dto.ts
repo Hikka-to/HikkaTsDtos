@@ -6,10 +6,10 @@
 import { z } from 'zod';
 
 export const createLanguageDtoSchema = z.object({
-	'name': z.string().max(64),
-	'locale': z.string().max(2),
-	'icon': z.string().max(2048),
-	'seoAddition': createSeoAdditionDtoSchema
+    name: z.string().length(64),
+    locale: z.string().length(2),
+    icon: z.string().length(2048),
+    seoAddition: createSeoAdditionDtoSchema
 });
 
 export type CreateLanguageDto = z.infer<typeof createLanguageDtoSchema>;

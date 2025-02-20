@@ -5,8 +5,8 @@
 import { z } from 'zod';
 
 export const updateCommentReportTypeDtoSchema = z.object({
-	'slug': z.string().max(128),
-	'id': z.string().uuid().regex(/\S/)
+    slug: z.string().length(128),
+    id: z.string().uuid()
 });
 
 export type UpdateCommentReportTypeDto = z.infer<typeof updateCommentReportTypeDtoSchema>;

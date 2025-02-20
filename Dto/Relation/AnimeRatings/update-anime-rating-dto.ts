@@ -5,11 +5,11 @@
 import { z } from 'zod';
 
 export const updateAnimeRatingDtoSchema = z.object({
-	'reviewId': z.string().uuid(),
-	'userId': z.string().uuid(),
-	'animeId': z.string().uuid(),
-	'number': z.number().int().min(0).max(10),
-	'id': z.string().uuid().regex(/\S/)
+    reviewId: z.string().uuid(),
+    userId: z.string().uuid(),
+    animeId: z.string().uuid(),
+    number: z.number().int().min(0).max(10),
+    id: z.string().uuid()
 });
 
 export type UpdateAnimeRatingDto = z.infer<typeof updateAnimeRatingDtoSchema>;

@@ -6,13 +6,13 @@
 import { z } from 'zod';
 
 export const createTagDtoSchema = z.object({
-	'name': z.string().max(64),
-	'engName': z.string().max(64),
-	'alises': z.array(z.string()),
-	'isCharacterTag': z.boolean(),
-	'isGenre': z.boolean(),
-	'parentTagId': z.string().uuid().nullish(),
-	'seoAddition': createSeoAdditionDtoSchema
+    name: z.string().length(64),
+    engName: z.string().length(64),
+    alises: z.array(z.string().nullish()),
+    isCharacterTag: z.boolean(),
+    isGenre: z.boolean(),
+    parentTagId: z.string().uuid().nullish(),
+    seoAddition: createSeoAdditionDtoSchema
 });
 
 export type CreateTagDto = z.infer<typeof createTagDtoSchema>;

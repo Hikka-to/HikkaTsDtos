@@ -5,10 +5,10 @@
 import { z } from 'zod';
 
 export const updateSeasonDtoSchema = z.object({
-	'animeId': z.string().uuid(),
-	'animeGroupId': z.string().uuid(),
-	'name': z.string(),
-	'id': z.string().uuid().regex(/\S/)
+    animeId: z.string().uuid(),
+    animeGroupId: z.string().uuid(),
+    name: z.string(),
+    id: z.string().uuid()
 });
 
 export type UpdateSeasonDto = z.infer<typeof updateSeasonDtoSchema>;

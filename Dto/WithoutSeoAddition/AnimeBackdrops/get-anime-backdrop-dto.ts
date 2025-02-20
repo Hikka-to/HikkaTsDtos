@@ -5,12 +5,12 @@
 import { z } from 'zod';
 
 export const getAnimeBackdropDtoSchema = z.object({
-	'animeId': z.string().uuid(),
-	'imageUrl': z.string(),
-	'width': z.number().int(),
-	'height': z.number().int(),
-	'colors': z.array(z.number().int()),
-	'id': z.string().uuid().regex(/\S/)
+    animeId: z.string().uuid(),
+    imageUrl: z.string(),
+    width: z.number().int(),
+    height: z.number().int(),
+    colors: z.array(z.number().int().min(-2147483648).max(2147483647)),
+    id: z.string().uuid()
 });
 
 export type GetAnimeBackdropDto = z.infer<typeof getAnimeBackdropDtoSchema>;

@@ -5,12 +5,12 @@
 import { z } from 'zod';
 
 export const updateAnimeVideoDtoSchema = z.object({
-	'animeVideoKindId': z.string().uuid(),
-	'name': z.string().max(156),
-	'url': z.string().max(2048),
-	'imageUrl': z.string().max(2048),
-	'embedUrl': z.string().max(2048),
-	'id': z.string().uuid().regex(/\S/)
+    animeVideoKindId: z.string().uuid(),
+    name: z.string().length(156),
+    url: z.string().length(2048),
+    imageUrl: z.string().length(2048),
+    embedUrl: z.string().length(2048),
+    id: z.string().uuid()
 });
 
 export type UpdateAnimeVideoDto = z.infer<typeof updateAnimeVideoDtoSchema>;

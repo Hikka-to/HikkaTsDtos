@@ -5,9 +5,9 @@
 import { z } from 'zod';
 
 export const getAlternativeNameDtoSchema = z.object({
-	'animeId': z.string().uuid(),
-	'name': z.string(),
-	'id': z.string().uuid().regex(/\S/)
+    animeId: z.string().uuid(),
+    name: z.string(),
+    id: z.string().uuid()
 });
 
 export type GetAlternativeNameDto = z.infer<typeof getAlternativeNameDtoSchema>;

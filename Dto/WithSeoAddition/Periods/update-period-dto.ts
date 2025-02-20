@@ -6,9 +6,9 @@
 import { z } from 'zod';
 
 export const updatePeriodDtoSchema = z.object({
-	'name': z.string().max(24),
-	'seoAddition': updateSeoAdditionDtoSchema,
-	'id': z.string().uuid().regex(/\S/)
+    name: z.string().length(24),
+    seoAddition: updateSeoAdditionDtoSchema,
+    id: z.string().uuid()
 });
 
 export type UpdatePeriodDto = z.infer<typeof updatePeriodDtoSchema>;

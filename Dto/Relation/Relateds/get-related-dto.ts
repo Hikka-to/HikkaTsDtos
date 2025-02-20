@@ -5,10 +5,10 @@
 import { z } from 'zod';
 
 export const getRelatedDtoSchema = z.object({
-	'animeId': z.string().uuid(),
-	'animeGroupId': z.string().uuid(),
-	'relatedTypeId': z.string().uuid(),
-	'id': z.string().uuid().regex(/\S/)
+    animeId: z.string().uuid(),
+    animeGroupId: z.string().uuid(),
+    relatedTypeId: z.string().uuid(),
+    id: z.string().uuid()
 });
 
 export type GetRelatedDto = z.infer<typeof getRelatedDtoSchema>;

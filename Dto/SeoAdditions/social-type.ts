@@ -2,21 +2,22 @@
  * This is a TypeGen auto-generated file.
  * Any changes made to this file can be lost when this file is regenerated.
  */
-import { z } from 'zod';
+
+import { z } from 'zod';
 
 export enum SocialType {
-    Website = 0,
-    Article = 1,
-    Book = 2,
-    Profile = 3,
-    VideoOther = 4,
-    VideoMovie = 5,
-    VideoEpisode = 6,
-    VideoTvShow = 7,
-    MusicSong = 8,
-    MusicAlbum = 9,
-    MusicPlaylist = 10,
-    MusicRadioStation = 11,
+    Website = "Website",
+    Article = "Article",
+    Book = "Book",
+    Profile = "Profile",
+    VideoOther = "VideoOther",
+    VideoMovie = "VideoMovie",
+    VideoEpisode = "VideoEpisode",
+    VideoTvShow = "VideoTvShow",
+    MusicSong = "MusicSong",
+    MusicAlbum = "MusicAlbum",
+    MusicPlaylist = "MusicPlaylist",
+    MusicRadioStation = "MusicRadioStation",
 }
 
 export const socialTypeSchema = z.nativeEnum(SocialType);

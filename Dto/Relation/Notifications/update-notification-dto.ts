@@ -5,10 +5,10 @@
 import { z } from 'zod';
 
 export const updateNotificationDtoSchema = z.object({
-	'userId': z.string().uuid(),
-	'animeId': z.string().uuid(),
-	'resourceId': z.string().uuid(),
-	'id': z.string().uuid().regex(/\S/)
+    userId: z.string().uuid(),
+    animeId: z.string().uuid(),
+    resourceId: z.string().uuid(),
+    id: z.string().uuid()
 });
 
 export type UpdateNotificationDto = z.infer<typeof updateNotificationDtoSchema>;

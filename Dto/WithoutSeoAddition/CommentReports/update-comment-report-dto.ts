@@ -5,11 +5,11 @@
 import { z } from 'zod';
 
 export const updateCommentReportDtoSchema = z.object({
-	'commentId': z.string().uuid(),
-	'userId': z.string().uuid(),
-	'commentReportTypeId': z.string().uuid(),
-	'body': z.string().max(2048).nullish(),
-	'id': z.string().uuid().regex(/\S/)
+    commentId: z.string().uuid(),
+    userId: z.string().uuid(),
+    commentReportTypeId: z.string().uuid(),
+    body: z.string().length(2048).nullish(),
+    id: z.string().uuid()
 });
 
 export type UpdateCommentReportDto = z.infer<typeof updateCommentReportDtoSchema>;
